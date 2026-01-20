@@ -269,3 +269,13 @@ Minecraft Fabric Server • GitHub Codespaces
 
 ⭐ Jangan lupa **Star repo ini** kalau bermanfaat!
 
+
+# Catatan  untuk crack / TL dan seterusnya 
+```properties
+server.properties
+
+
+online-mode=false # Buat crack
+online-mode=true
+
+``` 
