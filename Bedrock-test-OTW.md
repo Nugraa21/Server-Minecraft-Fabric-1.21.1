@@ -197,10 +197,11 @@ Shader Bedrock:
 * Bisa sleep
 * Cocok:
 
+
   * Belajar
   * Testing
   * Server private
-
+  
 ❌ Tidak cocok server publik besar
 
 ---
