@@ -1,124 +1,206 @@
-[11:37:54] [main/INFO]: Loading Minecraft 1.21.1 with Fabric Loader 0.18.4
-[11:37:54] [main/INFO]: Loading 4 mods:
+[12:08:52] [main/INFO]: Loading Minecraft 1.21.1 with Fabric Loader 0.18.4
+[12:08:52] [main/INFO]: Loading 68 mods:
+	- bettercombat 2.3.1+1.21.1
+	   \-- tiny_config 3.1.0
+	- cloth-config 15.0.140
+	   \-- cloth-basic-math 0.6.1
+	- distanthorizons 2.4.5-b
+	   |-- fabric-api-base 0.4.42+6573ed8c19
+	   |-- fabric-command-api-v2 2.2.28+6ced4dd919
+	   |-- fabric-events-interaction-v0 0.7.13+ba9dae0619
+	   |-- fabric-key-binding-api-v1 1.0.47+0af3f5a719
+	   |-- fabric-networking-api-v1 4.3.0+c7469b2119
+	   |-- fabric-rendering-v1 5.0.5+df16efd019
+	   |-- fabric-resource-loader-v0 1.3.1+5b5275af19
+	   \-- fabric-screen-api-v1 2.0.25+8b68f1c719
+	- dungeons_iso 3.0.5
+	   |-- com_github_zsoltmolnarrr_tinyconfig 2.3.2
+	   \-- mixinsquared 0.2.0-beta.6
+	- fabric-api 0.116.7+1.21.1
+	   |-- fabric-api-lookup-api-v1 1.6.71+b559734419
+	   |-- fabric-biome-api-v1 13.0.31+d527f9fd19
+	   |-- fabric-block-api-v1 1.1.0+0bc3503219
+	   |-- fabric-block-view-api-v2 1.0.11+ebb2264e19
+	   |-- fabric-blockrenderlayer-v1 1.1.52+0af3f5a719
+	   |-- fabric-client-tags-api-v1 1.1.15+6573ed8c19
+	   |-- fabric-command-api-v1 1.2.49+f71b366f19
+	   |-- fabric-commands-v0 0.2.66+df3654b319
+	   |-- fabric-content-registries-v0 8.0.19+b559734419
+	   |-- fabric-convention-tags-v1 2.1.5+7f945d5b19
+	   |-- fabric-convention-tags-v2 2.11.1+a406e79519
+	   |-- fabric-crash-report-info-v1 0.2.29+0af3f5a719
+	   |-- fabric-data-attachment-api-v1 1.4.5+6116a37819
+	   |-- fabric-data-generation-api-v1 20.2.34+37516cd619
+	   |-- fabric-dimensions-v1 4.0.1+65213ef819
+	   |-- fabric-entity-events-v1 1.8.0+2b27e0a419
+	   |-- fabric-game-rule-api-v1 1.0.53+6ced4dd919
+	   |-- fabric-item-api-v1 11.2.0+3b3cb2e819
+	   |-- fabric-item-group-api-v1 4.1.7+def88e3a19
+	   |-- fabric-key-binding-api-v1 1.0.47+0af3f5a719
+	   |-- fabric-keybindings-v0 0.2.45+df3654b319
+	   |-- fabric-lifecycle-events-v1 2.6.0+0865547519
+	   |-- fabric-loot-api-v2 3.0.15+3f89f5a519
+	   |-- fabric-loot-api-v3 1.0.3+3f89f5a519
+	   |-- fabric-message-api-v1 6.0.14+8aaf3aca19
+	   |-- fabric-model-loading-api-v1 2.1.0+b4d813fc19
+	   |-- fabric-object-builder-api-v1 15.2.1+40875a9319
+	   |-- fabric-particles-v1 4.0.2+6573ed8c19
+	   |-- fabric-recipe-api-v1 5.0.15+2475392c19
+	   |-- fabric-registry-sync-v0 5.3.1+e3eddc2119
+	   |-- fabric-renderer-api-v1 3.4.1+b4d813fc19
+	   |-- fabric-renderer-indigo 1.7.1+c705a49c19
+	   |-- fabric-renderer-registries-v1 3.2.69+df3654b319
+	   |-- fabric-rendering-data-attachment-v1 0.3.49+73761d2e19
+	   |-- fabric-rendering-fluids-v1 3.1.6+1daea21519
+	   |-- fabric-rendering-v0 1.1.72+df3654b319
+	   |-- fabric-rendering-v1 5.1.0+ab4c25a019
+	   |-- fabric-resource-conditions-api-v1 4.3.0+8dc279b119
+	   |-- fabric-screen-api-v1 2.0.25+8b68f1c719
+	   |-- fabric-screen-handler-api-v1 1.3.90+b559734419
+	   |-- fabric-sound-api-v1 1.0.23+6573ed8c19
+	   |-- fabric-transfer-api-v1 5.4.3+c24bd99419
+	   \-- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
 	- fabricloader 0.18.4
 	   \-- mixinextras 0.5.0
 	- java 25
 	- minecraft 1.21.1
-[11:37:54] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/workspaces/Server-Minecraft-Fabric-1.21.1/fabric-1.21.1/libraries/net/fabricmc/sponge-mixin/0.17.0+mixin.0.8.7/sponge-mixin-0.17.0+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
-[11:37:59] [main/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[11:38:00] [main/INFO]: No existing world data, creating new world
-[11:38:00] [main/INFO]: Loaded 1290 recipes
-[11:38:01] [main/INFO]: Loaded 1399 advancements
-[11:38:01] [Server thread/INFO]: Starting minecraft server version 1.21.1
-[11:38:01] [Server thread/INFO]: Loading properties
-[11:38:01] [Server thread/INFO]: Default game type: SURVIVAL
-[11:38:01] [Server thread/INFO]: Generating keypair
-[11:38:01] [Server thread/INFO]: Starting Minecraft server on *:25565
-[11:38:01] [Server thread/INFO]: Using epoll channel type
-[11:38:01] [Server thread/INFO]: Preparing level "world"
-[11:38:08] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[11:38:08] [Worker-Main-2/INFO]: Preparing spawn area: 2%
-[11:38:09] [Worker-Main-1/INFO]: Preparing spawn area: 2%
-[11:38:09] [Worker-Main-1/INFO]: Preparing spawn area: 2%
-[11:38:10] [Worker-Main-1/INFO]: Preparing spawn area: 2%
-[11:38:10] [Worker-Main-1/INFO]: Preparing spawn area: 2%
-[11:38:11] [Worker-Main-2/INFO]: Preparing spawn area: 2%
-[11:38:11] [Worker-Main-3/INFO]: Preparing spawn area: 18%
-[11:38:12] [Worker-Main-3/INFO]: Preparing spawn area: 18%
-[11:38:12] [Worker-Main-1/INFO]: Preparing spawn area: 18%
-[11:38:13] [Worker-Main-1/INFO]: Preparing spawn area: 18%
-[11:38:13] [Worker-Main-3/INFO]: Preparing spawn area: 51%
-[11:38:14] [Worker-Main-3/INFO]: Preparing spawn area: 51%
-[11:38:14] [Worker-Main-2/INFO]: Preparing spawn area: 51%
-[11:38:15] [Worker-Main-1/INFO]: Preparing spawn area: 51%
-[11:38:15] [Server thread/INFO]: Time elapsed: 6597 ms
-[11:38:15] [Server thread/INFO]: Done (13.633s)! For help, type "help"
-[11:38:49] [Server thread/INFO]: /advancement (grant|revoke)
-[11:38:49] [Server thread/INFO]: /attribute <target> <attribute> (get|base|modifier)
-[11:38:49] [Server thread/INFO]: /execute (run|if|unless|as|at|store|positioned|rotated|facing|align|anchored|in|summon|on)
-[11:38:49] [Server thread/INFO]: /bossbar (add|remove|list|set|get)
-[11:38:49] [Server thread/INFO]: /clear [<targets>]
-[11:38:49] [Server thread/INFO]: /clone (<begin>|from)
-[11:38:49] [Server thread/INFO]: /damage <target> <amount> [<damageType>]
-[11:38:49] [Server thread/INFO]: /data (merge|get|remove|modify)
-[11:38:49] [Server thread/INFO]: /datapack (enable|disable|list)
-[11:38:49] [Server thread/INFO]: /debug (start|stop|function)
-[11:38:49] [Server thread/INFO]: /defaultgamemode <gamemode>
-[11:38:49] [Server thread/INFO]: /difficulty [peaceful|easy|normal|hard]
-[11:38:49] [Server thread/INFO]: /effect (clear|give)
-[11:38:49] [Server thread/INFO]: /me <action>
-[11:38:49] [Server thread/INFO]: /enchant <targets> <enchantment> [<level>]
-[11:38:49] [Server thread/INFO]: /experience (add|set|query)
-[11:38:49] [Server thread/INFO]: /xp -> experience
-[11:38:49] [Server thread/INFO]: /fill <from> <to> <block> [replace|keep|outline|hollow|destroy]
-[11:38:49] [Server thread/INFO]: /fillbiome <from> <to> <biome> [replace]
-[11:38:49] [Server thread/INFO]: /forceload (add|remove|query)
-[11:38:49] [Server thread/INFO]: /function <name> [<arguments>|with]
-[11:38:49] [Server thread/INFO]: /gamemode <gamemode> [<target>]
-[11:38:49] [Server thread/INFO]: /gamerule (announceAdvancements|blockExplosionDropDecay|commandBlockOutput|commandModificationBlockLimit|disableElytraMovementCheck|disableRaids|doDaylightCycle|doEntityDrops|doFireTick|doImmediateRespawn|doInsomnia|doLimitedCrafting|doMobLoot|doMobSpawning|doPatrolSpawning|doTileDrops|doTraderSpawning|doVinesSpread|doWardenSpawning|doWeatherCycle|drowningDamage|enderPearlsVanishOnDeath|fallDamage|fireDamage|forgiveDeadPlayers|freezeDamage|globalSoundEvents|keepInventory|lavaSourceConversion|logAdminCommands|maxCommandChainLength|maxCommandForkCount|maxEntityCramming|mobExplosionDropDecay|mobGriefing|naturalRegeneration|playersNetherPortalCreativeDelay|playersNetherPortalDefaultDelay|playersSleepingPercentage|projectilesCanBreakBlocks|randomTickSpeed|reducedDebugInfo|sendCommandFeedback|showDeathMessages|snowAccumulationHeight|spawnChunkRadius|spawnRadius|spectatorsGenerateChunks|tntExplosionDropDecay|universalAnger|waterSourceConversion)
-[11:38:49] [Server thread/INFO]: /give <targets> <item> [<count>]
-[11:38:49] [Server thread/INFO]: /help [<command>]
-[11:38:49] [Server thread/INFO]: /item (replace|modify)
-[11:38:49] [Server thread/INFO]: /kick <targets> [<reason>]
-[11:38:49] [Server thread/INFO]: /kill [<targets>]
-[11:38:49] [Server thread/INFO]: /list [uuids]
-[11:38:49] [Server thread/INFO]: /locate (structure|biome|poi)
-[11:38:49] [Server thread/INFO]: /loot (replace|insert|give|spawn)
-[11:38:49] [Server thread/INFO]: /msg <targets> <message>
-[11:38:49] [Server thread/INFO]: /tell -> msg
-[11:38:49] [Server thread/INFO]: /w -> msg
-[11:38:49] [Server thread/INFO]: /particle <name> [<pos>]
-[11:38:49] [Server thread/INFO]: /place (feature|jigsaw|structure|template)
-[11:38:49] [Server thread/INFO]: /playsound <sound> [master|music|record|weather|block|hostile|neutral|player|ambient|voice]
-[11:38:49] [Server thread/INFO]: /random (value|roll|reset)
-[11:38:49] [Server thread/INFO]: /reload
-[11:38:49] [Server thread/INFO]: /recipe (give|take)
-[11:38:49] [Server thread/INFO]: /return (<value>|fail|run)
-[11:38:49] [Server thread/INFO]: /ride <target> (mount|dismount)
-[11:38:49] [Server thread/INFO]: /say <message>
-[11:38:49] [Server thread/INFO]: /schedule (function|clear)
-[11:38:49] [Server thread/INFO]: /scoreboard (objectives|players)
-[11:38:49] [Server thread/INFO]: /seed
-[11:38:49] [Server thread/INFO]: /setblock <pos> <block> [destroy|keep|replace]
-[11:38:49] [Server thread/INFO]: /spawnpoint [<targets>]
-[11:38:49] [Server thread/INFO]: /setworldspawn [<pos>]
-[11:38:49] [Server thread/INFO]: /spectate [<target>]
-[11:38:49] [Server thread/INFO]: /spreadplayers <center> <spreadDistance> <maxRange> (<respectTeams>|under)
-[11:38:49] [Server thread/INFO]: /stopsound <targets> [*|master|music|record|weather|block|hostile|neutral|player|ambient|voice]
-[11:38:49] [Server thread/INFO]: /summon <entity> [<pos>]
-[11:38:49] [Server thread/INFO]: /tag <targets> (add|remove|list)
-[11:38:49] [Server thread/INFO]: /team (list|add|remove|empty|join|leave|modify)
-[11:38:49] [Server thread/INFO]: /teammsg <message>
-[11:38:49] [Server thread/INFO]: /tm -> teammsg
-[11:38:49] [Server thread/INFO]: /teleport (<location>|<destination>|<targets>)
-[11:38:49] [Server thread/INFO]: /tp -> teleport
-[11:38:49] [Server thread/INFO]: /tellraw <targets> <message>
-[11:38:49] [Server thread/INFO]: /tick (query|rate|step|sprint|unfreeze|freeze)
-[11:38:49] [Server thread/INFO]: /time (set|add|query)
-[11:38:49] [Server thread/INFO]: /title <targets> (clear|reset|title|subtitle|actionbar|times)
-[11:38:49] [Server thread/INFO]: /trigger <objective> [add|set]
-[11:38:49] [Server thread/INFO]: /weather (clear|rain|thunder)
-[11:38:49] [Server thread/INFO]: /worldborder (add|set|center|damage|get|warning)
-[11:38:49] [Server thread/INFO]: /jfr (start|stop)
-[11:38:49] [Server thread/INFO]: /ban-ip <target> [<reason>]
-[11:38:49] [Server thread/INFO]: /banlist [ips|players]
-[11:38:49] [Server thread/INFO]: /ban <targets> [<reason>]
-[11:38:49] [Server thread/INFO]: /deop <targets>
-[11:38:49] [Server thread/INFO]: /op <targets>
-[11:38:49] [Server thread/INFO]: /pardon <targets>
-[11:38:49] [Server thread/INFO]: /pardon-ip <target>
-[11:38:49] [Server thread/INFO]: /perf (start|stop)
-[11:38:49] [Server thread/INFO]: /save-all [flush]
-[11:38:49] [Server thread/INFO]: /save-off
-[11:38:49] [Server thread/INFO]: /save-on
-[11:38:49] [Server thread/INFO]: /setidletimeout <minutes>
-[11:38:49] [Server thread/INFO]: /stop
-[11:38:49] [Server thread/INFO]: /transfer <hostname> [<port>]
-[11:38:49] [Server thread/INFO]: /whitelist (on|off|list|add|remove|reload)
-[11:41:26] [User Authenticator #1/INFO]: UUID of player prasetyo is 8cb770c8-19ce-487a-b9dc-1cfafdbe6fdb
-[11:41:27] [Server thread/INFO]: prasetyo[/127.253.126.47:52515] logged in with entity id 36 at (38.5, 77.0, -55.5)
-[11:41:27] [Server thread/INFO]: prasetyo joined the game
-[11:41:52] [Server thread/INFO]: Made prasetyo a server operator
-[11:42:01] [Server thread/INFO]: [prasetyo: Set own game mode to Creative Mode]
-[11:44:56] [Server thread/INFO]: prasetyo lost connection: Disconnected
-[11:44:56] [Server thread/INFO]: prasetyo left the game
+	- owo 0.12.15.4+1.21
+	   |-- blue_endless_jankson 1.2.2
+	   |-- io_wispforest_endec 0.1.5.1
+	   |-- io_wispforest_endec_gson 0.1.3.1
+	   |-- io_wispforest_endec_jankson 0.1.3.1
+	   \-- io_wispforest_endec_netty 0.1.2
+	- placeholder-api 2.4.2+1.21
+	- playeranimator 2.0.4+1.21.1
+	- xaerominimap 25.2.10
+	- xaeroworldmap 1.39.12
+	- yet_another_config_lib_v3 3.8.1+1.21.1-fabric
+	   |-- com_twelvemonkeys_common_common-image 3.12.0
+	   |-- com_twelvemonkeys_common_common-io 3.12.0
+	   |-- com_twelvemonkeys_common_common-lang 3.12.0
+	   |-- com_twelvemonkeys_imageio_imageio-core 3.12.0
+	   |-- com_twelvemonkeys_imageio_imageio-metadata 3.12.0
+	   |-- com_twelvemonkeys_imageio_imageio-webp 3.12.0
+	   |-- org_quiltmc_parsers_gson 0.2.1
+	   \-- org_quiltmc_parsers_json 0.2.1
+[12:08:53] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/workspaces/Server-Minecraft-Fabric-1.21.1/fabric-1.21.1/libraries/net/fabricmc/sponge-mixin/0.17.0+mixin.0.8.7/sponge-mixin-0.17.0+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+[12:08:53] [main/INFO]: Compatibility level set to JAVA_17
+[12:08:53] [main/INFO]: Compatibility level set to JAVA_21
+[12:08:53] [main/WARN]: Reference map 'tiny_config-common-common-refmap.json' for tiny_config.mixins.json could not be read. If this is a development environment you can ignore this message
+[12:08:53] [main/WARN]: Reference map 'yet_another_config_lib_v3.refmap.json' for yacl.mixins.json could not be read. If this is a development environment you can ignore this message
+[12:08:53] [main/WARN]: Reference map 'yet_another_config_lib_v3.refmap.json' for yacl-fabric.mixins.json could not be read. If this is a development environment you can ignore this message
+[12:08:53] [main/WARN]: Error loading class: net/minecraft/class_287 (java.lang.ClassNotFoundException: net/minecraft/class_287)
+[12:08:53] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+[12:08:53] [main/WARN]: Error loading class: net/minecraft/class_437 (java.lang.ClassNotFoundException: net/minecraft/class_437)
+[12:08:53] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+[12:08:53] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage)
+[12:08:53] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[12:08:59] [main/INFO]: BasiqueEvangelist: what if... iphones
+[12:08:59] [main/INFO]: Initializing Distant Horizons server, firing DhApiBeforeDhInitEvent event...
+[12:08:59] [main/INFO]: Running library validation...
+[12:08:59] [main/INFO]: Garbage collectors: [G1 Young Generation, G1 Concurrent GC, G1 Old Generation]
+[12:08:59] [main/WARN]: Distant Horizons: G1 Garbage collector detected. 
+This garbage collector can cause FPS stuttering. 
+It's recommended to use a concurrent garbage collector 
+like ZGC (Java 21+) or Shenandoah (Java 8 through 17) for a smoother experience. 
+
+[12:08:59] [main/INFO]: Distant Horizons, Version: 2.4.5-b
+[12:08:59] [main/INFO]: Registering Fabric Server Events
+[12:08:59] [main/INFO]: Skipping mod compatibility accessor for: [starlight]
+[12:08:59] [main/INFO]: Skipping mod compatibility accessor for: [optifine]
+[12:08:59] [main/INFO]: Skipping mod compatibility accessor for: [bclib]
+[12:08:59] [main/INFO]: Skipping mod compatibility accessor for: [c2me]
+[12:08:59] [main/INFO]: Skipping mod compatibility accessor for: [iris]
+[12:08:59] [main/INFO]: Distant Horizons server Initialized, adding event subscribers...
+[12:08:59] [main/INFO]: Loading Xaero's Minimap - Stage 1/2 (Server)
+[12:08:59] [main/INFO]: Loading Xaero's World Map - Stage 1/2 (Server)
+[12:08:59] [main/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:09:00] [main/INFO]: Found new data pack bettercombat, loading it automatically
+[12:09:00] [main/INFO]: Found new data pack fabric, loading it automatically
+[12:09:00] [main/INFO]: Found new data pack fabric-convention-tags-v2, loading it automatically
+[12:09:01] [main/INFO]: Loaded 1290 recipes
+[12:09:01] [main/INFO]: Loaded 1399 advancements
+[12:09:02] [main/INFO]: Applied 0 biome modifications to 0 of 64 new biomes in 1.425 ms
+[12:09:02] [Server thread/INFO]: Initialising config for [DistantHorizons]
+[12:09:02] [Server thread/INFO]: [DistantHorizons] Config initialised
+[12:09:02] [Server thread/INFO]: Dimension ignoring disabled, DH will render all dimensions.
+[12:09:02] [Server thread/INFO]: Applying config to loggers
+[12:09:02] [Server thread/INFO]: Running Delayed setup...
+[12:09:02] [Server thread/INFO]: Delayed setup complete, firing DhApiAfterDhInitEvent event...
+[12:09:02] [Server thread/INFO]: Checking for Distant Horizons update
+[12:09:06] [Server thread/INFO]: Distant Horizons already up to date.
+[12:09:06] [Server thread/INFO]: Distant Horizons server Initialized at 
+[12:09:06] [Server thread/INFO]: Encoded Weapon Attribute registry size (with package overhead): 2455 bytes (in 1 string chunks with the size of 10000)
+[12:09:06] [Server thread/INFO]: Started [DhServerWorld] of type [SERVER_ONLY].
+[12:09:06] [Server thread/INFO]: Starting minecraft server version 1.21.1
+[12:09:06] [Server thread/INFO]: Loading properties
+[12:09:06] [Server thread/INFO]: Default game type: SURVIVAL
+[12:09:06] [Server thread/INFO]: Generating keypair
+[12:09:06] [Server thread/INFO]: Starting Minecraft server on *:25565
+[12:09:06] [Server thread/INFO]: Using epoll channel type
+[12:09:06] [Server thread/INFO]: Preparing level "world"
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0010-sqlite-createInitialDataTables.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0020-sqlite-createFullDataSourceV2Tables.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0030-sqlite-changeTableJournaling.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0031-sqlite-useSqliteWalJournaling.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0040-sqlite-removeRenderCache.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:06] [Server thread/INFO]: Running SQL update script: [sqlScripts/0050-sqlite-addApplyToParentIndex.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:07] [Server thread/INFO]: Running SQL update script: [sqlScripts/0060-sqlite-createChunkHashTable.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:07] [Server thread/INFO]: Running SQL update script: [sqlScripts/0070-sqlite-createBeaconBeamTable.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:07] [Server thread/INFO]: Running SQL update script: [sqlScripts/0080-sqlite-addApplyToChildrenColumn.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:07] [Server thread/INFO]: Running SQL update script: [sqlScripts/0090-sqlite-addAdjacentFullDataColumns.sql], for repo: [./world/data/DistantHorizons.sqlite]
+[12:09:07] [DH-Full Data Migration Thread[0]/INFO]: No migration necessary.
+[12:09:07] [Server thread/INFO]: Started DhServerLevel for [Wrapped{ServerLevel[world]@minecraft:overworld}] at [[LocalSaveStructure@(./world/data)]].
+[12:09:07] [DH-Request Module Ticker [minecraft:overworld] Thread[0]/INFO]: Batch Chunk Generator initialized
+[12:09:07] [DH-Request Module Ticker [minecraft:overworld] Thread[0]/INFO]: Creating world gen queue
+[12:09:07] [DH-Request Module Ticker [minecraft:overworld] Thread[0]/INFO]: Created world gen queue
+[12:09:07] [DH-Request Module Ticker [minecraft:overworld] Thread[0]/INFO]: Set world gen queue for level [minecraft:overworld].
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0010-sqlite-createInitialDataTables.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0020-sqlite-createFullDataSourceV2Tables.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0030-sqlite-changeTableJournaling.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0031-sqlite-useSqliteWalJournaling.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0040-sqlite-removeRenderCache.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0050-sqlite-addApplyToParentIndex.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0060-sqlite-createChunkHashTable.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0070-sqlite-createBeaconBeamTable.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0080-sqlite-addApplyToChildrenColumn.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0090-sqlite-addAdjacentFullDataColumns.sql], for repo: [./world/DIM-1/data/DistantHorizons.sqlite]
+[12:09:09] [DH-Full Data Migration Thread[0]/INFO]: No migration necessary.
+[12:09:09] [Server thread/INFO]: Started DhServerLevel for [Wrapped{ServerLevel[world]@minecraft:the_nether}] at [[LocalSaveStructure@(./world/data;./world/DIM-1/data)]].
+[12:09:09] [DH-Request Module Ticker [minecraft:the_nether] Thread[0]/INFO]: Batch Chunk Generator initialized
+[12:09:09] [DH-Request Module Ticker [minecraft:the_nether] Thread[0]/INFO]: Creating world gen queue
+[12:09:09] [DH-Request Module Ticker [minecraft:the_nether] Thread[0]/INFO]: Created world gen queue
+[12:09:09] [DH-Request Module Ticker [minecraft:the_nether] Thread[0]/INFO]: Set world gen queue for level [minecraft:the_nether].
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0010-sqlite-createInitialDataTables.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0020-sqlite-createFullDataSourceV2Tables.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0030-sqlite-changeTableJournaling.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0031-sqlite-useSqliteWalJournaling.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0040-sqlite-removeRenderCache.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0050-sqlite-addApplyToParentIndex.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0060-sqlite-createChunkHashTable.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0070-sqlite-createBeaconBeamTable.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0080-sqlite-addApplyToChildrenColumn.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [Server thread/INFO]: Running SQL update script: [sqlScripts/0090-sqlite-addAdjacentFullDataColumns.sql], for repo: [./world/DIM1/data/DistantHorizons.sqlite]
+[12:09:09] [DH-Full Data Migration Thread[0]/INFO]: No migration necessary.
+[12:09:09] [Server thread/INFO]: Started DhServerLevel for [Wrapped{ServerLevel[world]@minecraft:the_end}] at [[LocalSaveStructure@(./world/data;./world/DIM-1/data;./world/DIM1/data)]].
+[12:09:09] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:09:09] [DH-Request Module Ticker [minecraft:the_end] Thread[0]/INFO]: Batch Chunk Generator initialized
+[12:09:09] [DH-Request Module Ticker [minecraft:the_end] Thread[0]/INFO]: Creating world gen queue
+[12:09:09] [DH-Request Module Ticker [minecraft:the_end] Thread[0]/INFO]: Created world gen queue
+[12:09:09] [DH-Request Module Ticker [minecraft:the_end] Thread[0]/INFO]: Set world gen queue for level [minecraft:the_end].
+[12:09:09] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[12:09:09] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[12:09:10] [Server thread/INFO]: Time elapsed: 804 ms
+[12:09:10] [Server thread/INFO]: Done (3.775s)! For help, type "help"
+[12:09:10] [Server thread/INFO]: Loading Xaero's Minimap - Stage 2/2 (Server)
+[12:09:10] [Server thread/INFO]: Loading Xaero's World Map - Stage 2/2 (Server)
+[12:10:23] [User Authenticator #1/INFO]: UUID of player prasetyo is 8cb770c8-19ce-487a-b9dc-1cfafdbe6fdb
+[12:10:26] [Server thread/INFO]: prasetyo[/127.25.241.131:46515] logged in with entity id 68 at (6.148311977635757, 78.0, -69.53400207235472)
+[12:10:26] [Server thread/INFO]: Player [prasetyo] joined.
+[12:10:26] [Server thread/INFO]: prasetyo joined the game
+[12:11:28] [Server thread/INFO]: [prasetyo: Set the time to 1000]
+[12:11:31] [DH-World Gen Thread[0]/INFO]: WorldGen requiring [minecraft:structure_starts] is outside the expected range. Returning EMPTY chunk.
+[12:13:41] [Server thread/INFO]: prasetyo has made the advancement [Stone Age]
+[12:14:10] [Netty Epoll Server IO #2/INFO]: Player [prasetyo] disconnected.
+[12:14:10] [Server thread/INFO]: prasetyo lost connection: Disconnected
+[12:14:10] [Server thread/INFO]: prasetyo left the game
