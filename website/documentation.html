@@ -86,7 +86,21 @@
                 <span class="logo-text">FABRIC<span class="highlight">DOCS</span></span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <!-- Dropdown Mode -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Mode Select <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">
+                            <i data-lucide="cloud"></i> Cloud Server
+                        </a>
+                        <a href="selfhost.html" class="dropdown-item">
+                            <i data-lucide="monitor"></i> Self-Host PC
+                        </a>
+                    </div>
+                </li>
+
+                <li><a href="documentation.html" class="nav-link" style="color:var(--primary)">Dokumentasi</a></li>
             </ul>
         </div>
     </nav>

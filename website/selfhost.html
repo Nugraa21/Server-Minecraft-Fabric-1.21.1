@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Panduan Instalasi Server Minecraft Fabric 1.21.1 di Windows dan Linux (Self-Hosted)">
+    <title>Nugra Server Fabric 1.21.1 | Panduan Self-Host</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
+    <style>
+        .os-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .os-win {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .os-linux {
+            background: rgba(234, 179, 8, 0.15);
+            color: #facc15;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon"><i data-lucide="server"></i></div>
+                <span class="logo-text">NUGRA<span class="highlight">LOCAL</span></span>
+            </div>
+            <ul class="nav-links">
+                <!-- Dropdown Mode -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Mode Select <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">
+                            <i data-lucide="cloud"></i> Cloud Server
+                        </a>
+                        <a href="selfhost.html" class="dropdown-item active">
+                            <i data-lucide="monitor"></i> Self-Host PC
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Menu <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#windows" class="dropdown-item">Windows</a>
+                        <a href="#linux" class="dropdown-item">Linux</a>
+                        <a href="#networking" class="dropdown-item">Akses Publik</a>
+                        <a href="#troubleshooting" class="dropdown-item">Masalah</a>
+                    </div>
+                </li>
+
+                <li><a href="documentation.html" class="nav-link">Dokumentasi</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge fade-in">Windows & Linux</span>
+            <h1 class="fade-in delay-1">Server Minecraft <br><span class="gradient-text">Local / Self-Hosted</span></h1>
+            <p class="fade-in delay-2">Panduan lengkap menjalankan Minecraft Fabric Server 1.21.1 di
+                <strong>Komputer Pribadi (Windows)</strong> atau <strong>Linux VPS</strong> Anda sendiri.
+            </p>
+            <div class="hero-actions fade-in delay-3">
+                <a href="#windows" class="btn-primary">
+                    <i data-lucide="monitor"></i> Panduan Windows
+                </a>
+                <a href="#linux" class="btn-secondary">
+                    <i data-lucide="terminal"></i> Panduan Linux
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator fade-in delay-3">
+            <span>Scroll ke bawah</span>
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Requirements -->
+    <section class="section relative">
+        <div class="container">
+            <h2 class="section-title text-center">Persyaratan Hardware</h2>
+            <div class="features-grid">
+                <div class="feature-card tilt-card">
+                    <div class="card-icon"><i data-lucide="cpu"></i></div>
+                    <h3>Processor (CPU)</h3>
+                    <p>Minimal Dual Core 2.5GHz+. Disarankan Quad Core untuk performa tanpa lag.</p>
+                </div>
+                <div class="feature-card tilt-card">
+                    <div class="card-icon"><i data-lucide="hard-drive"></i></div>
+                    <h3>RAM (Memory)</h3>
+                    <p>Minimal 4GB terdedikasi untuk server. Jika bermain di PC yang sama, gunakan 16GB total RAM PC.
+                    </p>
+                </div>
+                <div class="feature-card tilt-card">
+                    <div class="card-icon"><i data-lucide="wifi"></i></div>
+                    <h3>Koneksi Internet</h3>
+                    <p>Upload speed minimal 10Mbps stabil jika ingin membuka server untuk publik via playit.gg.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versions Section (Same as Main) -->
+    <section id="versions" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Daftar Versi <span class="highlight">Minecraft</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Pilih versi Minecraft yang ingin Anda install. Klik perintah untuk menyalin.</p>
+            </div>
+
+            <div class="versions-table-container fade-in">
+                <table class="version-table">
+                    <thead>
+                        <tr>
+                            <th>Versi MC</th>
+                            <th>Perintah Instalasi (Universal)</th>
+                            <th>Installer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="version-list-body">
+                        <!-- Data will be loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Windows Tutorial -->
+    <section id="windows" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="os-badge os-win"><i data-lucide="monitor"></i> WINDOWS</span>
+                <h2 class="section-title">Instalasi di <span class="highlight">Windows</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Langkah mudah membuat server di PC/Laptop Windows 10/11.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Download & Install Java 21</h3>
+                        <p>Fabric 1.21.1 membutuhkan <strong>Java Development Kit (JDK) 21</strong>.</p>
+                        <a href="https://adoptium.net/temurin/releases/?version=21" target="_blank"
+                            class="btn-secondary" style="display:inline-flex; padding:0.5rem 1rem; margin-top:0.5rem;">
+                            <i data-lucide="download"></i> Download JDK 21 (Adoptium)
+                        </a>
+                        <p class="small-note" style="margin-top:10px;">*Pilih installer .msi untuk Windows x64. Setelah
+                            download, install dan restart PC Anda.*</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Persiapan Folder</h3>
+                        <p>Buat folder baru di Desktop atau Drive D: Anda. Beri nama <code>MinecraftServer</code>.</p>
+                        <div class="note-box">
+                            <i data-lucide="alert-circle"></i> Jangan gunakan spasi pada nama folder agar tidak error.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Download Installer & Install</h3>
+                        <p>Download <a href="https://fabricmc.net/use/installer/" target="_blank"
+                                style="color:var(--primary);">Universal Installer (.jar)</a> atau (.exe). Letakkan di
+                            folder server.</p>
+                        <p>Buka CMD (Command Prompt) di folder tersebut, lalu ketik perintah instalasinya (Contoh untuk
+                            1.21.1):</p>
+                        <div class="code-block">
+                            <div class="code-header">CMD / Powershell</div>
+                            <pre><code>java -jar fabric-installer-1.0.1.jar server -mcversion 1.21.1 -downloadMinecraft</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                        <p>Fila <code>fabric-server-launch.jar</code> akan muncul.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Buat Run.bat</h3>
+                        <p>Buka Notepad, tempel kode di bawah, lalu Save As dengan nama <code>Run.bat</code> (Pilih "All
+                            Files" pada Save as type).</p>
+                        <div class="code-block">
+                            <div class="code-header">Run.bat</div>
+                            <pre><code>@echo off
+java -Xms4G -Xmx6G -jar fabric-server-launch.jar nogui
+pause</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h3>Jalankan Server</h3>
+                        <p>Double klik <code>Run.bat</code>. Console akan muncul dan menutup. <br>
+                            Buka <code>eula.txt</code>, ubah <code>eula=false</code> menjadi <code>true</code>. <br>
+                            Jalan <code>Run.bat</code> lagi. Selesai!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linux Tutorial -->
+    <section id="linux" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="os-badge os-linux"><i data-lucide="terminal"></i> LINUX (Ubuntu/Debian)</span>
+                <h2 class="section-title">Instalasi di <span class="highlight">Linux</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Cocok untuk penggunaan VPS atau OS Linux Desktop.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Install Java 21</h3>
+                        <p>Gunakan terminal untuk menginstal OpenJDK 21.</p>
+                        <div class="code-block">
+                            <div class="code-header">bash</div>
+                            <pre><code>sudo apt update
+sudo apt install openjdk-21-jdk -y
+java -version</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Setup Folder & Download Installer</h3>
+                        <div class="code-block">
+                            <div class="code-header">bash</div>
+                            <pre><code>mkdir fabric-server
+cd fabric-server
+wget https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.1/fabric-installer-1.0.1.jar</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Install Server Core</h3>
+                        <div class="code-block">
+                            <div class="code-header">bash</div>
+                            <pre><code>java -jar fabric-installer-1.0.1.jar server -mcversion 1.21.1 -downloadMinecraft</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Start Script</h3>
+                        <p>Buat file <code>start.sh</code>:</p>
+                        <div class="code-block">
+                            <div class="code-header">bash</div>
+                            <pre><code>echo "java -Xms4G -Xmx6G -jar fabric-server-launch.jar nogui" > start.sh
+chmod +x start.sh</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                        <p>Jalankan sekali dengan <code>./start.sh</code>, lalu edit <code>eula.txt</code> dan setujui.
+                            Jalankan lagi <code>./start.sh</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Networking -->
+    <section id="networking" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Akses <span class="highlight">Publik</span> (Playit.gg)</h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Agar teman Anda bisa bergabung ke server Localhost Anda.</p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="feature-card">
+                    <h3><i data-lucide="globe" style="color:var(--primary);"></i> playit.gg (Mudah)</h3>
+                    <p>Cara termudah tanpa setting router modem.</p>
+                    <ol style="margin-top:1rem; padding-left:1.5rem; color:var(--text-muted); line-height:1.8;">
+                        <li>Download aplikasi <a href="https://playit.gg/download" target="_blank"
+                                style="color:var(--primary);">playit.gg</a>.</li>
+                        <li>Jalankan aplikasinya (Double click di Windows, atau via terminal di Linux).</li>
+                        <li>Buka link 'Claim' yang muncul.</li>
+                        <li>Tambahkan tunnel <strong>Minecraft Java</strong> (Local Port: 25565).</li>
+                        <li>Selesai! Gunakan domain playit (contoh: <code>nugra.playit.gg</code>) untuk join.</li>
+                    </ol>
+                </div>
+                <div class="feature-card">
+                    <h3><i data-lucide="router" style="color:#ef4444;"></i> Port Forwarding (Manual)</h3>
+                    <p>Metode traditional yang memerlukan akses admin router.</p>
+                    <p style="margin-top:1rem; color:var(--text-muted);">
+                        1. Login router (192.168.1.1/192.168.100.1).<br>
+                        2. Menu Network / Forwarding.<br>
+                        3. Buka Port <strong>25565</strong> TCP/UDP.<br>
+                        4. Arahkan ke IP Local PC Anda (Cek via ipconfig, misal 192.168.1.10).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Masalah Lokal Umum</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4><i data-lucide="shield-alert"></i> Windows Firewall?</h4>
+                    <p>Jika teman tidak bisa join meski sudah playit.gg, izinkan "Java Platform SE Binary" di Windows
+                        Firewall (Private & Public).</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i data-lucide="play-circle"></i> Run.bat langsung menutup?</h4>
+                    <p>Tambahkan baris <code>pause</code> di baris terakhir file Run.bat untuk melihat pesan errornya
+                        (biasanya karena Java belum terinstall).</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i data-lucide="hard-drive"></i> RAM Penuh?</h4>
+                    <p>Jangan alokasikan RAM melebihi kapasitas PC. Jika PC punya 8GB, server max 4GB saja agar Windows
+                        tidak crash.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>NUGRA FABRIC LOCAL</span>
+                    <p>Dokumentasi profesional untuk komunitas Minecraft Indonesia.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://fabricmc.net" target="_blank">FabricMC</a>
+                    <a href="https://modrinth.com" target="_blank">Modrinth</a>
+                    <a href="https://playit.gg" target="_blank">playit.gg</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Dibuat oleh <strong>Nugra21</strong> &copy; 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
