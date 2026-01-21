@@ -1,0 +1,143 @@
+{
+    "project": "Minecraft Fabric Server Versions",
+    "author": "Nugraa21",
+    "last_updated": "2026-01-21",
+    "versions": [
+        {
+            "minecraft": "1.21.1",
+            "stable": true,
+            "recommended": true
+        },
+        {
+            "minecraft": "1.21",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.6",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.5",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.4",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.3",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.2",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20.1",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.20",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.19.4",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.19.3",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.19.2",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.19.1",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.19",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.18.2",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.18.1",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.18",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.17.1",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.17",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16.5",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16.4",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16.3",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16.2",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16.1",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.16",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.15.2",
+            "stable": true,
+            "recommended": false
+        },
+        {
+            "minecraft": "1.14.4",
+            "stable": true,
+            "recommended": false
+        }
+    ],
+    "note": "Hanya versi mayor dan stabil yang dicantumkan untuk kemudahan instalasi."
+}
