@@ -1,56 +1,100 @@
-const mcVersionsData = [
-    { "minecraft": "1.21.1", "stable": true, "recommended": true },
-    { "minecraft": "1.21", "stable": true, "recommended": false },
-    { "minecraft": "1.20.6", "stable": true, "recommended": false },
-    { "minecraft": "1.20.4", "stable": true, "recommended": false },
-    { "minecraft": "1.20.1", "stable": true, "recommended": true },
-    { "minecraft": "1.19.4", "stable": true, "recommended": false },
-    { "minecraft": "1.19.2", "stable": true, "recommended": true },
-    { "minecraft": "1.18.2", "stable": true, "recommended": true },
-    { "minecraft": "1.16.5", "stable": true, "recommended": true },
-    { "minecraft": "1.12.2", "stable": true, "recommended": false }
-];
-
 document.addEventListener('DOMContentLoaded', () => {
-    renderVersions();
-    initCopyButtons();
-});
+    // 1. Initialize Icons
+    lucide.createIcons();
 
-function renderVersions() {
-    const container = document.getElementById('version-data');
-    if (!container) return;
+    // 2. Scroll Animations (Fade In)
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-    container.innerHTML = mcVersionsData.map(v => `
-        <tr>
-            <td data-label="Versi Minecraft"><strong>${v.minecraft}</strong></td>
-            <td data-label="Status"><span class="status-badge ${v.stable ? 'stable' : 'snapshot'}">${v.stable ? 'Stable' : 'Snapshot'}</span></td>
-            <td data-label="Rekomendasi">${v.recommended ? '<span class="rec-icon">⭐ Terbaik</span>' : '-'}</td>
-        </tr>
-    `).join('');
-}
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
 
-function initCopyButtons() {
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // 3. Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(5, 5, 5, 0.85)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+        } else {
+            navbar.style.background = 'transparent';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // 4. Copy to Clipboard Functionality
     document.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const code = btn.closest('.code-block').querySelector('code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i data-lucide="check" style="color: #38b000"></i>';
+        btn.addEventListener('click', async () => {
+            const codeBlock = btn.closest('.code-block');
+            const code = codeBlock.querySelector('code').innerText;
+
+            try {
+                await navigator.clipboard.writeText(code);
+
+                // Visual Feedback
+                const originalIcon = btn.innerHTML;
+                btn.innerHTML = '<i data-lucide="check"></i>';
+                btn.style.color = '#22c55e'; // Success green
+                btn.style.borderColor = '#22c55e';
                 lucide.createIcons();
+
                 setTimeout(() => {
-                    btn.innerHTML = originalHTML;
+                    btn.innerHTML = originalIcon;
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
                     lucide.createIcons();
                 }, 2000);
+            } catch (err) {
+                console.error('Failed to copy!', err);
+            }
+        });
+    });
+
+    // 5. 3D Tilt Effect for Cards
+    const cards = document.querySelectorAll('.tilt-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Mouse position for gradient effect
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            // Calculate tilt
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const angleX = (y - centerY) / 20;
+            const angleY = (centerX - x) / 20;
+
+            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+    });
+
+    // 6. Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
     });
-}
-
-// Global visual tweaks
-const customStyle = document.createElement('style');
-customStyle.innerHTML = `
-    .stable { background: rgba(56, 176, 0, 0.15); color: #70e000; border: 1px solid rgba(56, 176, 0, 0.3); }
-    .snapshot { background: rgba(255, 159, 28, 0.15); color: #ff9f1c; border: 1px solid rgba(255, 159, 28, 0.3); }
-    .rec-icon { color: #ffd700; font-weight: 600; }
-`;
-document.head.appendChild(customStyle);
+});
