@@ -105,37 +105,56 @@ ul {
 }
 
 /* Navbar */
+/* Navbar - Dynamic Island Style */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1200px;
+    height: 70px;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    /* Pill shape */
+    background: rgba(10, 10, 10, 0.6);
+    /* Default glass */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.glass {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.85);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+    top: 15px;
+    width: 90%;
+    /* Slight shrink for dynamic effect */
 }
 
+/* Specific nav container adjustments */
 .nav-container {
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem;
+    /* Adjust internal padding */
+    width: 100%;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-size: 1.3rem;
+    /* Slightly smaller for compact feel */
+    font-weight: 800;
     letter-spacing: -0.03em;
+    padding-left: 0.5rem;
 }
 
 .logo-icon {

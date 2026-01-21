@@ -78,11 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(5, 5, 5, 0.85)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+            navbar.classList.add('scrolled');
+            // Ensure inline styles don't conflict (if any were set previously)
+            navbar.style.background = '';
+            navbar.style.boxShadow = '';
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
+            navbar.style.background = '';
+            navbar.style.boxShadow = '';
         }
     });
 
