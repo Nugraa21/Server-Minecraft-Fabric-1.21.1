@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Panduan Modifikasi Server Minecraft Fabric: Mods, Datapacks, World, dan Konfigurasi Pemain">
+    <title>Nugra Server | Modifikasi & Kustomisasi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon"><i data-lucide="settings"></i></div>
+                <span class="logo-text">NUGRA<span class="highlight">MODS</span></span>
+            </div>
+            <ul class="nav-links">
+                <!-- Dropdown Mode -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Mode Select <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">
+                            <i data-lucide="cloud"></i> Cloud Server
+                        </a>
+                        <a href="selfhost.html" class="dropdown-item">
+                            <i data-lucide="monitor"></i> Self-Host PC
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Modifikasi <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#mods" class="dropdown-item">Mods</a>
+                        <a href="#datapacks" class="dropdown-item">Datapacks</a>
+                        <a href="#world" class="dropdown-item">Ganti World</a>
+                        <a href="#config" class="dropdown-item">Crack/OP</a>
+                    </div>
+                </li>
+
+                <li><a href="documentation.html" class="nav-link">Dokumentasi</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge fade-in">Advanced Config</span>
+            <h1 class="fade-in delay-1">Kustomisasi & <br><span class="gradient-text">Modifikasi Server</span></h1>
+            <p class="fade-in delay-2">Panduan lengkap untuk menambah Mods, Datapacks, Mengganti World, hingga
+                mengatur Permission Operator dan dukungan Pemain Non-Original (Cracked/TLauncher).
+            </p>
+            <div class="hero-actions fade-in delay-3">
+                <a href="#mods" class="btn-primary">
+                    <i data-lucide="package"></i> Pasang Mods
+                </a>
+                <a href="#config" class="btn-secondary">
+                    <i data-lucide="users"></i> Izin Pemain
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator fade-in delay-3">
+            <span>Scroll ke bawah</span>
+            <i data-lucide="chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Mods Section -->
+    <section id="mods" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Instalasi <span class="highlight">Mods</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Cara menambahkan modifikasi gameplay atau performa ke server Anda.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Download Mod yang Kompatibel</h3>
+                        <p>Pastikan Anda mendownload mod khusus untuk <strong>Fabric 1.21.1</strong>. Situs terpercaya:
+                        </p>
+                        <ul class="feature-list" style="margin-top:1rem; margin-bottom:1rem;">
+                            <li><a href="https://modrinth.com/mods?f=categories:fabric&g=categories:server&v=1.21.1"
+                                    target="_blank" style="color:var(--primary);">Modrinth (Recommended)</a></li>
+                            <li><a href="https://www.curseforge.com/minecraft/search?page=1&class=mc-mods&categoryId=&sortBy=relevancy&search=&gameVersion=1.21.1&loader=Fabric"
+                                    target="_blank" style="color:var(--primary);">CurseForge</a></li>
+                        </ul>
+                        <div class="doc-alert">
+                            <strong>Wajib:</strong> Hampir semua mod Fabric membutuhkan <strong>Fabric API</strong>.
+                            Pastikan file <code>fabric-api-xxxx.jar</code> selalu ada di folder mods.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Upload ke Server</h3>
+                        <p>Pindahkan file <code>.jar</code> mod yang sudah didownload ke dalam folder <code>mods</code>
+                            di direktori server Anda.</p>
+                        <div class="code-block">
+                            <div class="code-header">Struktur Folder</div>
+                            <pre><code>server-folder/
+├── mods/
+│   ├── fabric-api-xxxx.jar  <-- WAJIB
+│   ├── lithium-mc1.21.1.jar
+│   └── mod-pilihan-anda.jar
+└── ...</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Restart Server</h3>
+                        <p>Mods baru hanya akan terbaca setelah server direstart (Stop lalu Start kembali). Cek
+                            console/terminal untuk memastikan tidak ada error crash.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Datapacks Section -->
+    <section id="datapacks" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pasang <span class="highlight">Datapacks</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Menambah fitur custom tanpa harus install mod di sisi client pemain.</p>
+            </div>
+
+            <div class="features-grid" style="grid-template-columns: 1fr;">
+                <div class="feature-card">
+                    <div class="card-icon"><i data-lucide="file-code"></i></div>
+                    <h3>Langkah Pemasangan</h3>
+                    <p>1. Siapkan file datapack (biasanya <code>.zip</code>) atau folder datapacknya.</p>
+                    <p>2. Buka folder world server Anda, lalu masuk ke folder <code>datapacks</code>.</p>
+                    <div class="code-block small" style="margin: 1rem 0;">
+                        <pre><code>server-folder/world/datapacks/</code></pre>
+                    </div>
+                    <p>3. Masukkan file zip datapack ke situ.</p>
+                    <p>4. Jika server sedang menyala, ketik perintah <code>/reload</code> di console atau di game (jika
+                        OP).</p>
+                    <p>5. Cek apakah datapack aktif dengan perintah <code>/datapack list</code>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Management -->
+    <section id="world" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ganti <span class="highlight">World / Peta</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Cara menggunakan world custom atau map parkour/adventure pilihan Anda.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">A</div>
+                    <div class="timeline-content">
+                        <h3>Metode Timpa (Replace)</h3>
+                        <p>1. Matikan server.</p>
+                        <p>2. Hapus folder <code>world</code> yang ada di server (atau rename jadi
+                            <code>world_backup</code>).</p>
+                        <p>3. Copy folder world custom Anda ke folder server.</p>
+                        <p>4. Rename folder tersebut menjadi <code>world</code> agar sesuai dengan setting default.</p>
+                        <p>5. Nyalakan server.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">B</div>
+                    <div class="timeline-content">
+                        <h3>Metode Config</h3>
+                        <p>Jika Anda tidak ingin mengubah nama folder map Anda:</p>
+                        <p>1. Copy folder map (misal: <code>map_parkour</code>) ke folder server.</p>
+                        <p>2. Edit file <code>server.properties</code>.</p>
+                        <p>3. Cari bagian <code>level-name=world</code> dan ubah menjadi
+                            <code>level-name=map_parkour</code>.</p>
+                        <p>4. Simpan dan restart server.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Config & Permissions -->
+    <section id="config" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Konfigurasi <span class="highlight">Pemain & Izin</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Mengatur siapa yang bisa masuk dan siapa yang menjadi admin.</p>
+            </div>
+
+            <div class="config-grid">
+                <!-- Cracked / Offline Mode -->
+                <div class="config-card">
+                    <div class="card-header">
+                        <i data-lucide="unlock"></i>
+                        <h3>Izinkan Player Crack</h3>
+                    </div>
+                    <p>Secara default, server hanya mengizinkan akun original (Premium). Untuk mengizinkan user
+                        TLauncher/Crack:</p>
+                    <ol style="margin-top:1rem; padding-left:1.5rem; color:var(--text-muted);">
+                        <li>Matikan server.</li>
+                        <li>Buka file <code>server.properties</code>.</li>
+                        <li>Cari <code>online-mode=true</code>.</li>
+                        <li>Ubah menjadi <code>online-mode=false</code>.</li>
+                        <li>Simpan dan nyalakan server.</li>
+                    </ol>
+                    <div class="doc-alert" style="margin-top:1rem; padding:1rem; font-size:0.85rem;">
+                        <strong>Peringatan:</strong> Skin pemain mungkin tidak muncul, dan keamanan akun sedikit
+                        berkurang.
+                    </div>
+                </div>
+
+                <!-- OP / Admin -->
+                <div class="config-card featured">
+                    <div class="card-header">
+                        <i data-lucide="shield"></i>
+                        <h3>Memberikan Izin OP (Admin)</h3>
+                    </div>
+                    <p>Operator (OP) memiliki akses ke semua command seperti /gamemode, /ban, dll.</p>
+                    <div class="code-block" style="margin: 1rem 0;">
+                        <div class="code-header">Ketik di Terminal Server (Tanpa /)</div>
+                        <pre><code>op NamaPlayer</code></pre>
+                        <button class="copy-btn"><i data-lucide="copy"></i></button>
+                    </div>
+                    <p>Untuk mencabut izin OP:</p>
+                    <div class="code-block" style="margin: 1rem 0;">
+                        <pre><code>deop NamaPlayer</code></pre>
+                        <button class="copy-btn"><i data-lucide="copy"></i></button>
+                    </div>
+                </div>
+
+                <!-- Whitelist -->
+                <div class="config-card">
+                    <div class="card-header">
+                        <i data-lucide="list"></i>
+                        <h3>Whitelist (Mode Privat)</h3>
+                    </div>
+                    <p>Agar hanya orang tertentu yang bisa masuk:</p>
+                    <div class="code-block small">
+                        <div class="code-header">Di Terminal</div>
+                        <pre><code>whitelist on
+whitelist add NamaPlayer</code></pre>
+                    </div>
+                    <p style="margin-top:0.5rem; font-size:0.9rem;">Pastikan <code>white-list=true</code> di
+                        server.properties jika command tidak bekerja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>NUGRA MODS & CONFIG</span>
+                    <p>Dokumentasi profesional untuk komunitas Minecraft Indonesia.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://fabricmc.net" target="_blank">FabricMC</a>
+                    <a href="https://modrinth.com" target="_blank">Modrinth</a>
+                    <a href="index.html">Kembali ke Cloud</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Dibuat oleh <strong>Nugra21</strong> &copy; 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
