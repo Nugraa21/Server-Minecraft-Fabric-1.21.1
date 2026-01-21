@@ -1,8 +1,47 @@
+
+// Data Versi Minecraft & Command Install
+const versionData = [
+    { mc: "1.21.1", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.21.1 -downloadMinecraft", status: "Stable" },
+    { mc: "1.21", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.21 -downloadMinecraft", status: "Stable" },
+    { mc: "1.20.6", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.6 -downloadMinecraft", status: "Stable" },
+    { mc: "1.20.4", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.4 -downloadMinecraft", status: "Stable" },
+    { mc: "1.20.1", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.1 -downloadMinecraft", status: "Recom" },
+    { mc: "1.19.4", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.19.4 -downloadMinecraft", status: "Stable" },
+    { mc: "1.19.2", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.19.2 -downloadMinecraft", status: "Stable" },
+    { mc: "1.18.2", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.18.2 -downloadMinecraft", status: "Stable" },
+    { mc: "1.17.1", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.17.1 -downloadMinecraft", status: "Legacy" },
+    { mc: "1.16.5", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.16.5 -downloadMinecraft", status: "Recom" },
+    { mc: "1.15.2", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.15.2 -downloadMinecraft", status: "Legacy" },
+    { mc: "1.14.4", cmd: "java -jar fabric-installer-1.1.1.jar server -mcversion 1.14.4 -downloadMinecraft", status: "Legacy" }
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Icons
     lucide.createIcons();
 
-    // 2. Scroll Animations (Fade In)
+    // 2. Render Versions Table
+    const tableBody = document.getElementById('version-list-body');
+    if (tableBody) {
+        tableBody.innerHTML = versionData.map(v => `
+            <tr>
+                <td><span class="v-tag">${v.mc}</span></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="cmd-preview">${v.cmd}</div>
+                        <button class="btn-copy-small" onclick="copyToClipboard('${v.cmd}', this)">
+                            <i data-lucide="copy"></i>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <span class="v-tag ${getStatusClass(v.status)}">${v.status}</span>
+                </td>
+            </tr>
+        `).join('');
+        lucide.createIcons();
+    }
+
+    // 3. Scroll Animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px"
@@ -12,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -21,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 3. Navbar Scroll Effect
+    // 4. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -33,48 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Copy to Clipboard Functionality
+    // 5. Code Block Copy to Clipboard
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', async () => {
             const codeBlock = btn.closest('.code-block');
             const code = codeBlock.querySelector('code').innerText;
-
-            try {
-                await navigator.clipboard.writeText(code);
-
-                // Visual Feedback
-                const originalIcon = btn.innerHTML;
-                btn.innerHTML = '<i data-lucide="check"></i>';
-                btn.style.color = '#22c55e'; // Success green
-                btn.style.borderColor = '#22c55e';
-                lucide.createIcons();
-
-                setTimeout(() => {
-                    btn.innerHTML = originalIcon;
-                    btn.style.color = '';
-                    btn.style.borderColor = '';
-                    lucide.createIcons();
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy!', err);
-            }
+            copyToClipboard(code, btn);
         });
     });
 
-    // 5. 3D Tilt Effect for Cards
+    // 6. 3D Tilt Effect
     const cards = document.querySelectorAll('.tilt-card');
-
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            // Mouse position for gradient effect
             card.style.setProperty('--mouse-x', `${x}px`);
             card.style.setProperty('--mouse-y', `${y}px`);
 
-            // Calculate tilt
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             const angleX = (y - centerY) / 20;
@@ -88,13 +105,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Smooth Scroll for Anchor Links
+    // 7. Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Close mobile menu if open (simple logic)
+            // const mobileMenu = document.querySelector('.nav-links');
+            // mobileMenu.style.display = 'none'; // Optional
         });
     });
 });
+
+// Helper: Copy Function
+async function copyToClipboard(text, btnElement) {
+    try {
+        await navigator.clipboard.writeText(text);
+
+        const originalIcon = btnElement.innerHTML;
+        btnElement.innerHTML = '<i data-lucide="check"></i>';
+        btnElement.style.color = '#22c55e';
+        lucide.createIcons();
+
+        setTimeout(() => {
+            btnElement.innerHTML = originalIcon; // Use original icon (copy)
+            // If it was the list button, we need to reset to copy icon specifically if strictly needed, 
+            // but innerHTML reset works if original was static.
+            // For code blocks it was static. For list it is static too.
+            if (btnElement.classList.contains('btn-copy-small')) {
+                btnElement.innerHTML = '<i data-lucide="copy"></i>';
+            }
+            btnElement.style.color = '';
+            lucide.createIcons();
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy!', err);
+    }
+}
+
+// Helper: Status Styles
+function getStatusClass(status) {
+    if (status === 'Stable') return 'status-green';
+    if (status === 'Recom') return 'status-recom';
+    if (status === 'Legacy') return 'status-legacy';
+    return '';
+}

@@ -15,7 +15,6 @@
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
-    <!-- Placeholder icon -->
 </head>
 
 <body>
@@ -28,6 +27,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#fitur" class="nav-link">Fitur</a></li>
+                <li><a href="#versions" class="nav-link">Versi</a></li>
                 <li><a href="#tutorial" class="nav-link">Tutorial</a></li>
                 <li><a href="#config" class="nav-link">Konfigurasi</a></li>
                 <li><a href="#client" class="nav-link">Client</a></li>
@@ -55,8 +55,8 @@
                 <a href="#tutorial" class="btn-primary">
                     <i data-lucide="play-circle"></i> Mulai Instalasi
                 </a>
-                <a href="#kebutuhan" class="btn-secondary">
-                    <i data-lucide="info"></i> Syarat Sistem
+                <a href="#versions" class="btn-secondary">
+                    <i data-lucide="download"></i> Download Versi
                 </a>
             </div>
         </div>
@@ -105,6 +105,32 @@
         </div>
     </section>
 
+    <!-- Versions Section -->
+    <section id="versions" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Daftar Versi <span class="highlight">Minecraft</span></h2>
+                <div class="section-line"></div>
+                <p class="section-desc">Pilih versi Minecraft yang ingin Anda install. Klik perintah untuk menyalin.</p>
+            </div>
+
+            <div class="versions-table-container fade-in">
+                <table class="version-table">
+                    <thead>
+                        <tr>
+                            <th>Versi MC</th>
+                            <th>Perintah Instalasi (Klik untuk Salin)</th>
+                            <th>Installer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="version-list-body">
+                        <!-- Data will be loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Directory Structure -->
     <section id="struktur" class="section bg-alt pattern-grid">
         <div class="container">
@@ -142,7 +168,7 @@
         </div>
     </section>
 
-    <!-- System Requirements -->
+    <!-- System Requirements - Moved below structure as secondary info -->
     <section id="kebutuhan" class="section">
         <div class="container">
             <h2 class="section-title text-center">Kebutuhan Sistem</h2>

@@ -15,6 +15,24 @@
     --gradient-glow: radial-gradient(circle at center, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -197,26 +215,28 @@ ul {
     justify-content: center;
     position: relative;
     padding-top: 80px;
+    overflow: hidden;
 }
 
+/* Updated Hero Background */
 .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:
-        radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(34, 40, 197, 0.05) 0%, transparent 40%);
+    background: url('../assets/hero_bg.png') center/cover no-repeat;
     z-index: -2;
+    filter: brightness(0.35) saturate(1.1);
 }
 
+/* Updated Overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
     z-index: -1;
     mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
@@ -518,6 +538,108 @@ ul {
 .file {
     color: #d2a8ff;
 }
+
+/* Version Download Section */
+.versions-table-container {
+    background: var(--surface);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.version-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.version-table th {
+    background: rgba(34, 197, 94, 0.05);
+    padding: 1.25rem;
+    text-align: left;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.version-table td {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+}
+
+.version-table tr:last-child td {
+    border-bottom: none;
+}
+
+.version-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.v-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+/* Output Command Preview */
+.cmd-preview {
+    background: #000;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #a3a3a3;
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-copy-small {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    transition: 0.2s;
+}
+
+.btn-copy-small:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Status Tags */
+.v-tag.status-green {
+    /* Stable */
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.v-tag.status-recom {
+    /* Recommended */
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border-color: rgba(234, 179, 8, 0.3);
+}
+
+.v-tag.status-legacy {
+    /* Legacy */
+    background: rgba(255, 255, 255, 0.05);
+    color: #a3a3a3;
+}
+
 
 /* Timeline Tutorial */
 .timeline {
@@ -905,5 +1027,15 @@ ul {
 
     .timeline-item {
         padding-left: 40px;
+    }
+
+    .version-table th,
+    .version-table td {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .cmd-preview {
+        max-width: 200px;
     }
 }
