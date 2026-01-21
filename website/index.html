@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Fabric Server | Dokumentasi Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">FABRIC<span>DOCS</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#fitur">Fitur</a></li>
+                <li><a href="#tutorial">Tutorial</a></li>
+                <li><a href="#versi">Versi</a></li>
+                <li><a href="https://github.com/Nugraa21/Server-Minecraft-Fabric-1.21.1.git" target="_blank"
+                        class="btn-github">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="fade-in">Membangun Server Minecraft <br><span class="highlight">Fabric 1.21.1</span></h1>
+            <p class="fade-in delay-1">Panduan lengkap instalasi server profesional menggunakan GitHub Codespaces dan
+                playit.gg.</p>
+            <div class="hero-btns fade-in delay-2">
+                <a href="#tutorial" class="btn-primary">Mulai Sekarang</a>
+                <a href="#fitur" class="btn-secondary">Pelajari Fitur</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="fitur" class="section">
+        <div class="container">
+            <h2 class="section-title">Fitur Utama</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i data-lucide="zap"></i>
+                    <h3>Performa Optimal</h3>
+                    <p>Menggunakan Fabric 1.21.1 yang sangat ringan dan efisien untuk server pribadi maupun komunitas.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <i data-lucide="cloud"></i>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Konfigurasi siap pakai untuk GitHub Codespaces. Tidak perlu spesifikasi PC tinggi untuk
+                        menjalankan server.</p>
+                </div>
+                <div class="feature-card">
+                    <i data-lucide="shield-check"></i>
+                    <h3>Koneksi Aman</h3>
+                    <p>Integrasi playit.gg untuk tunneling aman tanpa perlu membuka port forwarding manual di router
+                        Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <i data-lucide="package"></i>
+                    <h3>Mod & Shader Ready</h3>
+                    <p>Mendukung penuh mod fabric-api, lithium, dan sodium untuk pengalaman bermain terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tutorial" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">Panduan Instalasi Lengkap</h2>
+            <div class="step-list">
+                <!-- Tahap 1: Persiapan -->
+                <div class="step-group-title">Tahap 1: Persiapan Cloud</div>
+
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <div class="step-text">
+                        <h3>Akun GitHub & Fork</h3>
+                        <p>Daftar akun di <a href="https://github.com" target="_blank">GitHub</a>. Setelah login,
+                            kunjungi repository ini dan klik tombol <strong>Fork</strong> di pojok kanan atas untuk
+                            menyalinnya ke akun Anda.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <div class="step-text">
+                        <h3>Setup Codespaces</h3>
+                        <p>Di repository hasil fork Anda, klik tombol hijau <strong>Code</strong>, pilih tab
+                            <strong>Codespaces</strong>, lalu klik <strong>Create codespace on main</strong>. Tunggu
+                            hingga terminal muncul.</p>
+                    </div>
+                </div>
+
+                <!-- Tahap 2: Server Core -->
+                <div class="step-group-title">Tahap 2: Konfigurasi Server</div>
+
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <div class="step-text">
+                        <h3>Install Java 21</h3>
+                        <p>Ketik perintah ini di terminal Codespaces untuk menginstal Java 21 (Wajib untuk 1.21.1).</p>
+                        <div class="code-block">
+                            <pre><code>sudo apt update && sudo apt install openjdk-21-jdk -y</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <div class="step-text">
+                        <h3>Download & Build Fabric</h3>
+                        <p>Buat folder server dan unduh installer Fabric terbaru.</p>
+                        <div class="code-block">
+                            <pre><code>mkdir fabric-server && cd fabric-server
+wget https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar
+java -jar fabric-installer-1.1.1.jar server -mcversion 1.21.1 -downloadMinecraft</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">05</div>
+                    <div class="step-text">
+                        <h3>Setujui EULA</h3>
+                        <p>Ubah status eula menjadi true agar server bisa berjalan.</p>
+                        <div class="code-block">
+                            <pre><code>echo "eula=true" > eula.txt</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tahap 3: Networking -->
+                <div class="step-group-title">Tahap 3: Online Tunneling</div>
+
+                <div class="step-item">
+                    <div class="step-number">06</div>
+                    <div class="step-text">
+                        <h3>Install playit.gg</h3>
+                        <p>Agar server bisa diakses dari luar tanpa port forwarding.</p>
+                        <div class="code-block">
+                            <pre><code>curl -SsL https://playit-cloud.github.io/ppa/key.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/playit.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/playit.gpg] https://playit-cloud.github.io/ppa/data ./" | sudo tee /etc/apt/sources.list.d/playit-cloud.list
+sudo apt update && sudo apt install playit -y
+playit</code></pre>
+                            <button class="copy-btn"><i data-lucide="copy"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tahap 4: Client -->
+                <div class="step-group-title">Tahap 4: Bergabung ke Server</div>
+
+                <div class="step-item">
+                    <div class="step-number">07</div>
+                    <div class="step-text">
+                        <h3>Client Setup</h3>
+                        <p>Pastikan Anda menggunakan Fabric Loader 1.21.1 pada launcher Minecraft Anda. Masukkan alamat
+                            IP yang diberikan oleh playit.gg untuk terhubung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="versi" class="section">
+        <div class="container">
+            <h2 class="section-title">Daftar Versi yang Didukung</h2>
+            <div class="table-container">
+                <table id="version-table">
+                    <thead>
+                        <tr>
+                            <th>Versi Minecraft</th>
+                            <th>Status</th>
+                            <th>Rekomendasi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="version-data">
+                        <!-- Data will be loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Nugraa21. Dibuat dengan dedikasi untuk komunitas Minecraft.</p>
+            <div class="social-links">
+                <a href="https://github.com/Nugraa21" target="_blank">GitHub</a>
+                <a href="https://playit.gg" target="_blank">playit.gg</a>
+                <a href="https://fabricmc.net" target="_blank">FabricMC</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
