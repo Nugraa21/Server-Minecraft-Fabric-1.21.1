@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-mode">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Dokumentasi Teknis Server Minecraft Fabric 1.21.1 - Detail Penggunaan Codespaces & Playit.gg">
+    <title>Dokumentasi Lengkap | Server Minecraft Fabric</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
+    <style>
+        .doc-section {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .doc-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .doc-section p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .doc-alert {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            color: #fca5a5;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            color: #93c5fd;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-nav {
+            padding: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon"><i data-lucide="book"></i></div>
+                <span class="logo-text">FABRIC<span class="highlight">DOCS</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section" style="padding-top: 120px; padding-bottom: 2rem;">
+        <div class="container">
+            <a href="index.html" class="back-btn"><i data-lucide="arrow-left"></i> Kembali ke Halaman Utama</a>
+            <h1 style="margin-top: 1rem; font-size: 3rem;">Dokumentasi & <span class="gradient-text">Informasi
+                    Teknis</span></h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin-top: 1rem;">
+                Penjelasan mendalam mengenai infrastruktur, batasan, dan solusi umum dalam penggunaan server ini.
+            </p>
+        </div>
+    </header>
+
+    <div class="container" style="padding-bottom: 4rem;">
+
+        <!-- Why GitHub Codespaces -->
+        <article class="doc-section fade-in">
+            <h2><i data-lucide="github" style="color: var(--primary);"></i> Mengapa GitHub Codespaces?</h2>
+            <p>
+                Server ini dirancang untuk berjalan di atas infrastruktur <strong>GitHub Codespaces</strong>. Ini adalah
+                lingkungan pengembangan berbasis cloud yang disediakan oleh GitHub (Microsoft).
+            </p>
+            <div class="doc-info">
+                <strong>Keuntungan Utama:</strong>
+                <ul style="margin-top: 0.5rem; list-style: disc; padding-left: 1.5rem;">
+                    <li><strong>Gratis (Tier Free):</strong> Setiap pengguna GitHub mendapatkan kuota penggunaan bulanan
+                        gratis (sekitar 120 jam core untuk free tier).</li>
+                    <li><strong>Spesifikasi Tinggi:</strong> Standar mesin yang diberikan memiliki RAM dan CPU yang
+                        sangat mumpuni (biasanya 2-core atau 4-core dengan RAM 4GB-8GB) untuk menjalankan server
+                        Minecraft.</li>
+                    <li><strong>Koneksi Cepat:</strong> Terhubung langsung dengan infrastruktur Azure, memberikan
+                        kecepatan download/upload yang tinggi.</li>
+                </ul>
+            </div>
+            <p>
+                Dengan menggunakan Codespaces, kita menghilangkan kebutuhan untuk menyewa VPS mahal atau membebani
+                komputer pribadi Anda (localhost) yang harus menyala terus menerus.
+            </p>
+        </article>
+
+        <!-- Limitations & Quota -->
+        <article class="doc-section fade-in delay-1">
+            <h2><i data-lucide="pie-chart" style="color: #ef4444;"></i> Batasan Kuota & Penyimpanan</h2>
+            <p>
+                Meskipun sangat powerful, GitHub memberikan batasan pada akun gratis (Free Tier). Sangat penting untuk
+                memahami ini agar server Anda tidak tiba-tiba berhenti.
+            </p>
+
+            <div class="requirements-wrapper"
+                style="margin-top: 0; margin-bottom: 1.5rem; grid-template-columns: 1fr 1fr;">
+                <div class="req-item" style="text-align: left;">
+                    <h3 style="color: #ef4444;">Storage (Penyimpanan)</h3>
+                    <p>Github memberikan batas penyimpanan sekitar <strong>15 GB per bulan</strong> untuk Codespaces.
+                    </p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>Implikasi:</strong> Jika ukuran world Minecraft Anda menjadi sangat besar (bergigabyte),
+                        atau Anda menginstal terlalu banyak mod berat, kuota storage ini bisa cepat habis. Selalu pantau
+                        penggunaan disk Anda.
+                    </p>
+                </div>
+                <div class="req-item" style="text-align: left;">
+                    <h3 style="color: #eab308;">Core Hours (Jam Pakai)</h3>
+                    <p>Batas penggunaan komputasi sekitar <strong>120 jam core per bulan</strong>.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        <strong>Implikasi:</strong> Server tidak bisa menyala 24/7 selamanya secara gratis. Jika Anda
+                        menjalankannya terus menerus, kuota gratis akan habis dalam beberapa hari. Matikan server (Stop
+                        Codespace) saat tidak dimainkan.
+                    </p>
+                </div>
+            </div>
+
+            <div class="doc-alert">
+                <i data-lucide="alert-triangle" style="display:inline; margin-right:8px;"></i>
+                <strong>Peringatan Hibernasi:</strong> Codespaces akan otomatis "mati" (hibernate) jika tidak ada
+                aktivitas (seperti mengetik di terminal) setelah 30 menit secara default. Anda perlu menggunakan
+                extension atau script keep-alive jika ingin meninggalkannya sebentar, namun tetap disarankan untuk
+                mematikannya jika tidak dipakai.
+            </div>
+        </article>
+
+        <!-- Common Problems -->
+        <article class="doc-section fade-in delay-2">
+            <h2><i data-lucide="tool" style="color: var(--primary);"></i> Masalah Umum & Solusi</h2>
+
+            <div class="faq-grid" style="margin-top: 1rem;">
+                <div class="faq-item">
+                    <h4>Server Lag / TPS Drop</h4>
+                    <p>Biasanya terjadi saat generate chunk baru. Pastikan Anda sudah menginstal mod
+                        <strong>Lithium</strong> dan <strong>FerriteCore</strong>. Jika masih berat, kurangi
+                        <code>view-distance</code> di file <code>server.properties</code> menjadi 8 atau 10.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>IP Berubah-ubah</h4>
+                    <p>Setiap kali Anda me-restart tunnel <code>playit.gg</code>, alamat IP/domain mungkin tetap sama
+                        jika Anda sudah claim agent, tapi jika membuat tunnel baru, IP akan berubah. Pastikan agent
+                        playit berjalan di background.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Java Version Error</h4>
+                    <p>Minecraft 1.21.1 <strong>WAJIB</strong> menggunakan Java 21. Jika Anda melihat error versi
+                        mayor/minor class file, itu berarti Anda mencoba menjalankan dengan Java 17 atau 8. Cek dengan
+                        <code>java -version</code>.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>"Failed to bind to port"</h4>
+                    <p>Artinya ada server lain yang sedang berjalan di port yang sama (25565). Matikan proses java yang
+                        lain atau restart codespace Anda dengan <code>sudo reboot</code>.</p>
+                </div>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="index.html" class="btn-primary" style="display: inline-flex; margin: 0 auto;">
+                <i data-lucide="home"></i> Kembali ke Halaman Utama
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span>FABRIC DOCS</span>
+                </div>
+                <div class="footer-bottom">
+                    <p>Dibuat oleh <strong>Nugraa21</strong> &copy; 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

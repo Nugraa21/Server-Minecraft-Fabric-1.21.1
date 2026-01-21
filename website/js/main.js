@@ -60,8 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 4. Navbar Scroll Effect
+    // 4. Navbar Scroll Effect & Mobile Menu
     const navbar = document.querySelector('.navbar');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+
+            // Optional: Toggle icon between menu and x
+            const icon = navLinks.classList.contains('active') ? 'x' : 'menu';
+            menuBtn.innerHTML = `<i data-lucide="${icon}"></i>`;
+            lucide.createIcons();
+        });
+    }
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.background = 'rgba(5, 5, 5, 0.85)';
@@ -114,9 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 target.scrollIntoView({ behavior: 'smooth' });
             }
 
-            // Close mobile menu if open (simple logic)
-            // const mobileMenu = document.querySelector('.nav-links');
-            // mobileMenu.style.display = 'none'; // Optional
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (menuBtn) {
+                    menuBtn.innerHTML = `<i data-lucide="menu"></i>`;
+                    lucide.createIcons();
+                }
+            }
         });
     });
 });
