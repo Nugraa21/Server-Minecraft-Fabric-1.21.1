@@ -1,0 +1,62 @@
+{
+    "project": "Fabric Installer Links & Commands",
+    "author": "Nugraa21",
+    "last_updated": "2026-01-21",
+    "installer": {
+        "version": "1.1.1",
+        "stable": true,
+        "url": "https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar",
+        "wget_command": "wget https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.1.1/fabric-installer-1.1.1.jar"
+    },
+    "install_commands": [
+        {
+            "minecraft_version": "1.21.1",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.21.1 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.21",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.21 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.20.6",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.6 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.20.4",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.4 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.20.1",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.20.1 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.19.4",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.19.4 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.19.2",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.19.2 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.18.2",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.18.2 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.17.1",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.17.1 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.16.5",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.16.5 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.15.2",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.15.2 -downloadMinecraft"
+        },
+        {
+            "minecraft_version": "1.14.4",
+            "command": "java -jar fabric-installer-1.1.1.jar server -mcversion 1.14.4 -downloadMinecraft"
+        }
+    ],
+    "note": "Perintah instalasi menggunakan installer versi 1.1.1. Ganti nama file jar jika Anda menggunakan versi yang berbeda."
+}
