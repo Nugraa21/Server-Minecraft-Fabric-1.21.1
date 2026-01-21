@@ -170,33 +170,104 @@
             </div>
         </article>
 
-        <!-- Common Problems -->
-        <article class="doc-section fade-in delay-2">
-            <h2><i data-lucide="tool" style="color: var(--primary);"></i> Masalah Umum & Solusi</h2>
+        <!-- FAQ Section -->
+        <article class="doc-section fade-in delay-2" id="faq-lengkap">
+            <h2><i data-lucide="help-circle" style="color: var(--primary);"></i> FAQ (Frequently Asked Questions)</h2>
 
-            <div class="faq-grid" style="margin-top: 1rem;">
-                <div class="faq-item">
-                    <h4>Server Lag / TPS Drop</h4>
-                    <p>Biasanya terjadi saat generate chunk baru. Pastikan Anda sudah menginstal mod
-                        <strong>Lithium</strong> dan <strong>FerriteCore</strong>. Jika masih berat, kurangi
-                        <code>view-distance</code> di file <code>server.properties</code> menjadi 8 atau 10.</p>
+            <!-- FAQ Grid Style for Responsive Layout -->
+            <style>
+                .faq-detailed-grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                @media(min-width: 768px) {
+                    .requirements-wrapper {
+                        grid-template-columns: 1fr 1fr;
+                    }
+
+                    .faq-detailed-grid {
+                        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    }
+                }
+
+                @media(max-width: 600px) {
+                    .requirements-wrapper {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+
+                .faq-card {
+                    background: var(--bg-card);
+                    border: 1px solid var(--border);
+                    border-radius: 16px;
+                    padding: 1.5rem;
+                    transition: transform 0.3s ease, border-color 0.3s ease;
+                }
+
+                .faq-card:hover {
+                    border-color: var(--primary);
+                    transform: translateY(-2px);
+                }
+
+                .faq-card h4 {
+                    color: var(--text-main);
+                    margin-bottom: 0.8rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                }
+
+                .faq-card p {
+                    font-size: 0.95rem;
+                    margin-bottom: 0;
+                    color: var(--text-muted);
+                }
+            </style>
+
+            <div class="faq-detailed-grid" style="margin-top: 2rem;">
+                <!-- General -->
+                <div class="faq-card">
+                    <h4><i data-lucide="server"></i> Apakah server ini gratis selamanya?</h4>
+                    <p>Server ini menggunakan Github Codespaces Free Tier. Selama Anda memiliki kuota jam (120
+                        jam/bulan), server ini gratis. Jika kuota habis, Anda harus menunggu bulan depan atau upgrade ke
+                        Pro.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>IP Berubah-ubah</h4>
-                    <p>Setiap kali Anda me-restart tunnel <code>playit.gg</code>, alamat IP/domain mungkin tetap sama
-                        jika Anda sudah claim agent, tapi jika membuat tunnel baru, IP akan berubah. Pastikan agent
-                        playit berjalan di background.</p>
+
+                <div class="faq-card">
+                    <h4><i data-lucide="wifi"></i> Apakah harus menggunakan playit.gg?</h4>
+                    <p>Ya, karena Codespaces berjalan di cloud tanpa IP publik statis. Playit.gg menyediakan tunnel agar
+                        pemain lain bisa join tanpa Anda perlu melakukan port forwarding di router.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>Java Version Error</h4>
-                    <p>Minecraft 1.21.1 <strong>WAJIB</strong> menggunakan Java 21. Jika Anda melihat error versi
-                        mayor/minor class file, itu berarti Anda mencoba menjalankan dengan Java 17 atau 8. Cek dengan
-                        <code>java -version</code>.</p>
+
+                <!-- Technical -->
+                <div class="faq-card">
+                    <h4><i data-lucide="cpu"></i> Mengapa server terasa berat?</h4>
+                    <p>Cek penggunaan RAM dengan perintah <code>htop</code> di terminal. Pastikan Anda menjalankan
+                        server dengan alokasi RAM yang benar (misal 4GB atau 8GB). Juga, jangan lupa instal mod Lithium.
+                    </p>
                 </div>
-                <div class="faq-item">
-                    <h4>"Failed to bind to port"</h4>
-                    <p>Artinya ada server lain yang sedang berjalan di port yang sama (25565). Matikan proses java yang
-                        lain atau restart codespace Anda dengan <code>sudo reboot</code>.</p>
+
+                <div class="faq-card">
+                    <h4><i data-lucide="save"></i> Bagaimana cara backup world?</h4>
+                    <p>Anda bisa men-zip folder <code>world</code> dan mendownloadnya, atau melakukan
+                        <code>git commit</code> dan <code>git push</code> ke repository GitHub Anda agar tersimpan di
+                        cloud.
+                    </p>
+                </div>
+
+                <!-- Errors -->
+                <div class="faq-card">
+                    <h4><i data-lucide="alert-triangle"></i> Error: "Out of Memory"?</h4>
+                    <p>Ini berarti RAM server penuh. Coba restart server. Jika sering terjadi, kurangi view-distance
+                        atau hapus beberapa mod berat.</p>
+                </div>
+
+                <div class="faq-card">
+                    <h4><i data-lucide="user-x"></i> Teman tidak bisa masuk (Connection Refused)</h4>
+                    <p>Pastikan terminal playit.gg masih berjalan dan statusnya "Online". Jika tunnel mati, teman tidak
+                        akan bisa masuk.</p>
                 </div>
             </div>
         </article>
@@ -214,10 +285,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span>FABRIC DOCS</span>
+                    <span>NUGRA DOCS</span>
                 </div>
                 <div class="footer-bottom">
-                    <p>Dibuat oleh <strong>Nugraa21</strong> &copy; 2026</p>
+                    <p>Dibuat oleh <strong>Nugra21</strong> &copy; 2026</p>
                 </div>
             </div>
         </div>
