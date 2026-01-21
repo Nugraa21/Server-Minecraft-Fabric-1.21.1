@@ -1,0 +1,17 @@
+# Minecraft runtime
+world/
+logs/
+crash-reports/
+libraries/
+versions/
+
+# Player data
+**/playerdata/
+**/stats/
+**/advancements/
+**/*.dat
+**/*.mca
+
+# OS junk
+.DS_Store
+Thumbs.db
