@@ -116,15 +116,20 @@
                 <h2 class="section-title">Owner <span class="highlight">Profile</span></h2>
             </div>
 
-            <div class="model-card flex no-bg fade-in delay-2"
-                style="background: rgba(10,10,10,0.6); border: 1px solid var(--border); border-radius: 24px;">
-                <div class="model-viewer-container" style="flex: 1.2;">
-                    <model-viewer src="minecraft_zombie.glb" alt="Owner Skin 3D" auto-rotate camera-controls
-                        disable-zoom disable-pan shadow-intensity="1" environment-image="neutral" exposure="1.2">
+            <div class="model-card flex no-bg fade-in delay-2 profile-card-glow"
+                style="background: rgba(10,10,10,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px;">
+                <div class="model-viewer-container floating-3d" style="flex: 1.2;">
+                    <model-viewer src="minecraft_zombie.glb" alt="Owner Skin 3D" autoplay animation-name="Walk"
+                        auto-rotate rotation-per-second="30deg" interaction-prompt="none" camera-controls disable-zoom
+                        disable-pan shadow-intensity="1" environment-image="neutral" exposure="1.2">
                     </model-viewer>
                 </div>
                 <div class="model-info" style="flex: 1; padding: 3rem;">
-                    <div class="model-tag" style="background: var(--primary); color: #fff;">Owner</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div class="model-tag" style="background: var(--primary); color: #fff;">Owner</div>
+                        <div style="display:flex; gap:5px; align-items:center;"><span class="status-dot online"></span>
+                            <span style="font-size:0.8rem; color:var(--primary-glow);">Online Now</span></div>
+                    </div>
                     <h3 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">Nugraa21</h3>
                     <p style="font-size: 1.1rem; line-height: 1.8;">
                         Main Developer & Server Administrator. Bertanggung jawab atas konfigurasi teknis, manajemen
@@ -157,9 +162,11 @@
             </div>
 
             <!-- Staff/Bot Profile (Creeper Placeholder) -->
-            <div class="model-card flex no-bg reverse fade-in delay-3" style="margin-top: 4rem;">
-                <div class="model-viewer-container" style="flex: 1;">
-                    <model-viewer src="creeper_minecraft_storymode_model.glb" alt="Mascot Skin 3D" auto-rotate
+            <div class="model-card flex no-bg reverse fade-in delay-3"
+                style="margin-top: 4rem; border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; background: rgba(5,5,5,0.4);">
+                <div class="model-viewer-container floating-3d" style="flex: 1;">
+                    <model-viewer src="creeper_minecraft_storymode_model.glb" alt="Mascot Skin 3D" autoplay
+                        animation-name="Walk" auto-rotate rotation-per-second="-20deg" interaction-prompt="none"
                         camera-controls disable-zoom disable-pan shadow-intensity="1" environment-image="neutral"
                         exposure="1">
                     </model-viewer>
