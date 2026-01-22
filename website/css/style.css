@@ -47,6 +47,16 @@ body.theme-docs {
     --hero-image: url('../assets/forge_hero_bg.png');
 }
 
+/* Theme: 3D Assets (Cyan/Teal) */
+body.theme-assets {
+    --primary: #06b6d4;
+    --primary-rgb: 6, 182, 212;
+    --primary-glow: #22d3ee;
+    --primary-dark: #0891b2;
+    --gradient-main: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    --hero-image: url('../assets/assets_bg.png');
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -1717,4 +1727,71 @@ ul {
         padding: 4rem 2rem;
         max-width: 100%;
     }
+}
+/* 3D Model Showcase Styles */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.model-card {
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(var(--primary-rgb), 0.1);
+}
+
+.model-viewer-container {
+    width: 100%;
+    height: 350px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    position: relative;
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    --poster-color: transparent;
+}
+
+.model-info {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border);
+}
+
+.model-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.model-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.model-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-glow);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
