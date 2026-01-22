@@ -111,22 +111,61 @@
     <nav class="navbar glass">
         <div class="container nav-container">
             <div class="logo">
-                <div class="logo-icon"><i data-lucide="cog"></i></div>
-                <span class="logo-text">FABRIC<span class="highlight">ULTIMATE</span></span>
+                <div class="logo-icon"><i data-lucide="box"></i></div>
+                <span class="logo-text">FABRIC<span class="highlight">SERVER</span></span>
             </div>
             <ul class="nav-links">
+                <!-- Dropdown Mode -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Quick Select <i data-lucide="chevron-down"
+                    <a href="#" class="nav-link dropdown-toggle">Mode Select <i data-lucide="chevron-down"
                             style="width:14px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item"><i data-lucide="home"></i> Home</a>
-                        <a href="selfhost.html" class="dropdown-item"><i data-lucide="server"></i> Self-Host</a>
-                        <a href="documentation.html" class="dropdown-item"><i data-lucide="book-open"></i> Docs</a>
+                        <a href="index.html" class="dropdown-item">
+                            <i data-lucide="cloud"></i> Cloud Server
+                        </a>
+                        <a href="selfhost.html" class="dropdown-item">
+                            <i data-lucide="monitor"></i> Self-Host PC
+                        </a>
                     </div>
                 </li>
-                <li><a href="#advanced" class="nav-link">Optimasi Lanjut</a></li>
+
+                <!-- Dropdown Modifikasi -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Modifikasi <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="modification.html#structure" class="dropdown-item">Arsitektur File</a>
+                        <a href="modification.html#server-properties" class="dropdown-item">Properties</a>
+                        <a href="modification.html#mods" class="dropdown-item">Mods Hub</a>
+                        <a href="modification.html#advanced" class="dropdown-item">Optimasi Kernel</a>
+                    </div>
+                </li>
+
+                <!-- Dropdown Server Status -->
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Server Status <i data-lucide="chevron-down"
+                            style="width:14px;"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
+                            <i data-lucide="cpu" style="color: var(--primary);"></i> Env: GitHub Codespaces
+                        </div>
+                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
+                            <i data-lucide="activity" style="color: var(--primary);"></i> Fabric 0.15.11
+                        </div>
+                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
+                            <i data-lucide="zap" style="color: var(--primary);"></i> Status: Stable
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="documentation.html" class="nav-link">Dokumentasi</a></li>
             </ul>
-            <div class="mobile-menu-btn"><i data-lucide="menu"></i></div>
+            <a href="https://github.com/Nugraa21/Server-Minecraft-Fabric-1.21.1.git" target="_blank" class="btn-github">
+                <i data-lucide="github"></i> Repository
+            </a>
+            <div class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </div>
         </div>
     </nav>
 
@@ -390,12 +429,14 @@
                     <tr>
                         <td><strong>Server Watchdog: One tick took 60.00s</strong></td>
                         <td>Server hang terlalu lama. Pasang mod <code>Lithium</code> dan set
-                            <code>max-tick-time=-1</code> di server.properties.</td>
+                            <code>max-tick-time=-1</code> di server.properties.
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>OutOfMemoryError</strong></td>
                         <td>RAM tidak mencukupi. Instal mod <code>FerriteCore</code> atau naikkan nilai
-                            <code>-Xmx</code> pada skrip startup.</td>
+                            <code>-Xmx</code> pada skrip startup.
+                        </td>
                     </tr>
                     <tr>
                         <td><strong>Can't keep up! Is the server overloaded?</strong></td>
