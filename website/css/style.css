@@ -57,6 +57,16 @@ body.theme-assets {
     --hero-image: url('../assets/assets_bg.png');
 }
 
+/* Theme: Profile (Red/Crimson) */
+body.theme-profile {
+    --primary: #f43f5e;
+    --primary-rgb: 244, 63, 94;
+    --primary-glow: #fb7185;
+    --primary-dark: #be123c;
+    --gradient-main: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    --hero-image: url('../assets/profile_bg.png');
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -1728,6 +1738,7 @@ ul {
         max-width: 100%;
     }
 }
+
 /* 3D Model Showcase Styles */
 .showcase-grid {
     display: grid;
@@ -1842,5 +1853,61 @@ model-viewer {
 
 .model-card.flex.reverse .model-info h3 {
     justify-content: flex-end;
+}
+
+/* Profile Specific Stats */
+.profile-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.stat-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.social-badges {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.social-badge {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-badge:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.4);
 }
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Preview 3D Model Minecraft - Diamond Sword & Map Showcase">
-    <title>3D Assets | FABRIC Server</title>
+    <meta name="description" content="Server Owner Profile - Nugra21 | FABRIC Server">
+    <title>Profile | FABRIC Server</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
 </head>
 
-<body class="theme-assets">
+<body class="theme-profile">
     <!-- Navigation -->
     <nav class="navbar glass">
         <div class="container nav-container">
@@ -73,7 +73,7 @@
                     </div>
                 </li>
 
-                <li><a href="assets-3d.html" class="nav-link active">Asset 3D</a></li>
+                <li><a href="assets-3d.html" class="nav-link active">Profile</a></li>
                 <li><a href="documentation.html" class="nav-link">Dokumentasi</a></li>
             </ul>
             <a href="https://github.com/Nugraa21/Server-Minecraft-Fabric-1.21.1.git" target="_blank" class="btn-github">
@@ -90,114 +90,100 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <span class="badge fade-in">Showcase Eksklusif</span>
-            <h1 class="fade-in delay-1">3D Model <br><span class="gradient-text">Showcase</span></h1>
-            <p class="fade-in delay-2">Eksplorasi aset visual digital Minecraft secara interaktif. Dari detail senjata
-                hingga struktur dunia yang menakjubkan.
+            <span class="badge fade-in">Server Owner & Staff</span>
+            <h1 class="fade-in delay-1">Meet The <br><span class="gradient-text">Creator</span></h1>
+            <p class="fade-in delay-2">Kenalan dengan tim di balik server Fabric Project 1.21.1.
+                Profesional, dedikatif, dan siap membantu komunitas.
             </p>
             <div class="hero-actions fade-in delay-3">
-                <a href="#gallery" class="btn-primary">
-                    <i data-lucide="layout"></i> Lihat Galeri
+                <a href="#profile" class="btn-primary">
+                    <i data-lucide="user"></i> Lihat Profil
                 </a>
             </div>
         </div>
         <div class="scroll-indicator fade-in delay-3">
-            <span>Scroll ke galeri</span>
+            <span>Scroll ke bawah</span>
             <i data-lucide="chevron-down"></i>
         </div>
     </header>
 
-    <!-- Character Preview Section -->
-    <section class="section" style="padding-bottom: 0;">
+    <!-- Character Profile Section -->
+    <section id="profile" class="section" style="padding-top: 0;">
         <div class="container">
-            <!-- Creeper Mob -->
-            <div class="model-card flex no-bg fade-in delay-2">
-                <div class="model-viewer-container">
-                    <model-viewer src="creeper_minecraft_storymode_model.glb" alt="Minecraft Creeper 3D Model"
-                        auto-rotate camera-controls disable-zoom disable-pan shadow-intensity="1"
-                        environment-image="neutral" exposure="1">
-                    </model-viewer>
-                </div>
-                <div class="model-info">
-                    <div class="model-tag">Mob</div>
-                    <h3><i data-lucide="skull"></i> Creeper</h3>
-                    <p>Mob ikonik yang meledak, ditampilkan dalam detail 3D dengan tekstur asli.</p>
-                </div>
+
+            <!-- Owner Profile (Zombie Placeholder) -->
+            <div class="section-header" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Owner <span class="highlight">Profile</span></h2>
             </div>
 
-            <!-- Zombie Mob -->
-            <div class="model-card flex no-bg reverse fade-in delay-3">
-                <div class="model-viewer-container">
-                    <model-viewer src="minecraft_zombie.glb" alt="Minecraft Zombie 3D Model" auto-rotate camera-controls
-                        disable-zoom disable-pan shadow-intensity="1" environment-image="neutral" exposure="1">
+            <div class="model-card flex no-bg fade-in delay-2"
+                style="background: rgba(10,10,10,0.6); border: 1px solid var(--border); border-radius: 24px;">
+                <div class="model-viewer-container" style="flex: 1.2;">
+                    <model-viewer src="minecraft_zombie.glb" alt="Owner Skin 3D" auto-rotate camera-controls
+                        disable-zoom disable-pan shadow-intensity="1" environment-image="neutral" exposure="1.2">
                     </model-viewer>
                 </div>
-                <div class="model-info">
-                    <div class="model-tag">Mob</div>
-                    <h3><i data-lucide="skull"></i> Zombie</h3>
-                    <p>Mob klasik yang berjalan lambat, ditampilkan dengan animasi dan pencahayaan realistis.
+                <div class="model-info" style="flex: 1; padding: 3rem;">
+                    <div class="model-tag" style="background: var(--primary); color: #fff;">Owner</div>
+                    <h3 style="font-size: 2.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">Nugraa21</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        Main Developer & Server Administrator. Bertanggung jawab atas konfigurasi teknis, manajemen
+                        plugin, dan optimasi performa server.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 3D Gallery Section -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Galeri <span class="highlight">Asset</span></h2>
-                <div class="section-line"></div>
-                <p class="section-desc">Gunakan mouse atau touch untuk memutar dan memperbesar model.</p>
-            </div>
+                    <div class="profile-stats">
+                        <div class="stat-box">
+                            <span class="stat-value">3y+</span>
+                            <span class="stat-label">Exp</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value">Builder</span>
+                            <span class="stat-label">Role</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value">IDN</span>
+                            <span class="stat-label">Region</span>
+                        </div>
+                    </div>
 
-            <div class="showcase-grid">
-                <!-- Diamond Sword -->
-                <div class="model-card fade-in">
-                    <div class="model-viewer-container">
-                        <model-viewer src="minecraft_diamond-sword.glb" alt="Minecraft Diamond Sword 3D Model"
-                            auto-rotate camera-controls shadow-intensity="1" environment-image="neutral" exposure="1.5"
-                            touch-action="pan-y">
-                        </model-viewer>
-                    </div>
-                    <div class="model-info">
-                        <div class="model-tag">Senjata</div>
-                        <h3><i data-lucide="sword"></i> Diamond Sword</h3>
-                        <p>Model ikonik pedang berlian Minecraft dengan tekstur asli dan detail 3D yang presisi.</p>
-                    </div>
-                </div>
-
-                <!-- World Map -->
-                <div class="model-card fade-in delay-1">
-                    <div class="model-viewer-container">
-                        <model-viewer src="minecraft.glb" alt="Minecraft World 3D Model" auto-rotate camera-controls
-                            shadow-intensity="1" environment-image="neutral" exposure="1" touch-action="pan-y">
-                        </model-viewer>
-                    </div>
-                    <div class="model-info">
-                        <div class="model-tag">Lingkungan</div>
-                        <h3><i data-lucide="map"></i> Minecraft World</h3>
-                        <p>Representasi 3D dari potongan dunia Minecraft, menampilkan variasi block dan struktur.</p>
+                    <div class="social-badges">
+                        <a href="https://github.com/Nugraa21" target="_blank" class="social-badge"><i
+                                data-lucide="github"></i></a>
+                        <a href="#" class="social-badge"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-badge"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="social-badge"><i data-lucide="mail"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="section bg-alt">
-        <div class="container">
-            <div class="info-box text-center">
-                <div class="info-icon" style="margin: 0 auto 1.5rem;"><i data-lucide="info"></i></div>
-                <h3>Tertarik Menggunakan Model Ini?</h3>
-                <p style="margin-bottom: 2rem;">Semua model di atas tersedia di repository sebagai bagian dari aset
-                    visual server kami. Anda dapat menggunakannya untuk keperluan konten atau modifikasi lebih lanjut.
-                </p>
-                <a href="https://github.com/Nugraa21/Server-Minecraft-Fabric-1.21.1.git" target="_blank"
-                    class="btn-secondary">
-                    <i data-lucide="download"></i> Download Aset
-                </a>
+            <!-- Staff/Bot Profile (Creeper Placeholder) -->
+            <div class="model-card flex no-bg reverse fade-in delay-3" style="margin-top: 4rem;">
+                <div class="model-viewer-container" style="flex: 1;">
+                    <model-viewer src="creeper_minecraft_storymode_model.glb" alt="Mascot Skin 3D" auto-rotate
+                        camera-controls disable-zoom disable-pan shadow-intensity="1" environment-image="neutral"
+                        exposure="1">
+                    </model-viewer>
+                </div>
+                <div class="model-info" style="flex: 1; padding: 2rem;">
+                    <div class="model-tag">Mascot / Security</div>
+                    <h3 style="font-size: 2rem;">Creeper Bot</h3>
+                    <p>
+                        Sistem keamanan otomatis yang menjaga server dari griefing dan spam.
+                        Jangan mendekat jika terdengar suara mendesis!
+                    </p>
+                    <div class="profile-stats">
+                        <div class="stat-box">
+                            <span class="stat-value">24/7</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value">99%</span>
+                            <span class="stat-label">Detection</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -227,7 +213,7 @@
                         <li><a href="documentation.html">Dokumentasi</a></li>
                         <li><a href="modification.html">Modifikasi</a></li>
                         <li><a href="selfhost.html">Self-Hosting</a></li>
-                        <li><a href="assets-3d.html">Asset 3D</a></li>
+                        <li><a href="assets-3d.html">Profile</a></li>
                     </ul>
                 </div>
 
