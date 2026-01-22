@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Panduan Modifikasi Server Minecraft Fabric: Mods, Datapacks, World, dan Konfigurasi Pemain">
-    <title>FABRIC Server | Modifikasi & Kustomisasi</title>
+        content="Panduan Lengkap Modifikasi Server Minecraft Fabric 1.21.1: Mods, Datapacks, JVM Optimization, dan Manajemen World">
+    <title>FABRIC Server | Ultimate Modification Guide</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,295 +15,449 @@
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="icon" type="image/png" href="https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico">
+    <style>
+        /* High-Density Technical Styling */
+        .tech-grid-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(10, 10, 10, 0.4);
+            margin: 1.5rem 0;
+        }
+
+        .tech-grid-table th {
+            background: rgba(var(--primary-rgb), 0.15);
+            color: var(--primary-glow);
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+
+        .tech-grid-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            vertical-align: top;
+        }
+
+        .tech-grid-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tech-grid-table td:last-child,
+        .tech-grid-table th:last-child {
+            border-right: none;
+        }
+
+        .tech-grid-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .code-tag {
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary-glow);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border: 1px solid rgba(var(--primary-rgb), 0.2);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 4rem 0;
+        }
+
+        .step-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--gradient-main);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #000;
+            box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.4);
+        }
+    </style>
 </head>
 
-<body>
+<body class="theme-mods">
     <!-- Navigation -->
     <nav class="navbar glass">
         <div class="container nav-container">
             <div class="logo">
-                <div class="logo-icon"><i data-lucide="settings"></i></div>
-                <span class="logo-text">FABRIC<span class="highlight">MODS</span></span>
+                <div class="logo-icon"><i data-lucide="cog"></i></div>
+                <span class="logo-text">FABRIC<span class="highlight">ULTIMATE</span></span>
             </div>
             <ul class="nav-links">
-                <!-- Dropdown Mode -->
                 <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Mode Select <i data-lucide="chevron-down"
+                    <a href="#" class="nav-link dropdown-toggle">Quick Select <i data-lucide="chevron-down"
                             style="width:14px;"></i></a>
                     <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">
-                            <i data-lucide="cloud"></i> Cloud Server
-                        </a>
-                        <a href="selfhost.html" class="dropdown-item">
-                            <i data-lucide="monitor"></i> Self-Host PC
-                        </a>
+                        <a href="index.html" class="dropdown-item"><i data-lucide="home"></i> Home</a>
+                        <a href="selfhost.html" class="dropdown-item"><i data-lucide="server"></i> Self-Host</a>
+                        <a href="documentation.html" class="dropdown-item"><i data-lucide="book-open"></i> Docs</a>
                     </div>
                 </li>
-
-                <!-- Dropdown Menu -->
-                <li class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active">Modifikasi <i data-lucide="chevron-down"
-                            style="width:14px;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#mods" class="dropdown-item">Mods</a>
-                        <a href="#datapacks" class="dropdown-item">Datapacks</a>
-                        <a href="#world" class="dropdown-item">Ganti World</a>
-                        <a href="#config" class="dropdown-item">Crack/OP</a>
-                    </div>
-                </li>
-
-                <li><a href="documentation.html" class="nav-link">Dokumentasi</a></li>
+                <li><a href="#advanced" class="nav-link">Optimasi Lanjut</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <i data-lucide="menu"></i>
-            </div>
+            <div class="mobile-menu-btn"><i data-lucide="menu"></i></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Landing -->
     <header class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <span class="badge fade-in">Advanced Config</span>
-            <h1 class="fade-in delay-1">Kustomisasi & <br><span class="gradient-text">Modifikasi Server</span></h1>
-            <p class="fade-in delay-2">Panduan lengkap untuk menambah Mods, Datapacks, Mengganti World, hingga
-                mengatur Permission Operator dan dukungan Pemain Non-Original (Cracked/TLauncher).
-            </p>
+            <span class="badge fade-in">Encyclopedia of Modification</span>
+            <h1 class="fade-in delay-1">Total <span class="gradient-text">Server Control</span></h1>
+            <p class="fade-in delay-2">Kuasai setiap aspek modifikasi dari level file sistem hingga tuning kernel
+                memori. Panduan tanpa celah untuk admin server profesional.</p>
             <div class="hero-actions fade-in delay-3">
-                <a href="#mods" class="btn-primary">
-                    <i data-lucide="package"></i> Pasang Mods
-                </a>
-                <a href="#config" class="btn-secondary">
-                    <i data-lucide="users"></i> Izin Pemain
-                </a>
+                <a href="#structure" class="btn-primary">Mulai Eksplorasi</a>
+                <a href="#advanced" class="btn-secondary">Kernel Tuning</a>
             </div>
-        </div>
-        <div class="scroll-indicator fade-in delay-3">
-            <span>Scroll ke bawah</span>
-            <i data-lucide="chevron-down"></i>
         </div>
     </header>
 
-    <!-- Mods Section -->
-    <section id="mods" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Instalasi <span class="highlight">Mods</span></h2>
-                <div class="section-line"></div>
-                <p class="section-desc">Cara menambahkan modifikasi gameplay atau performa ke server Anda.</p>
-            </div>
+    <div class="page-wrapper container">
+        <main class="main-content" style="max-width: 1150px;">
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h3>Download Mod yang Kompatibel</h3>
-                        <p>Pastikan Anda mendownload mod khusus untuk <strong>Fabric 1.21.1</strong>. Situs terpercaya:
-                        </p>
-                        <ul class="feature-list" style="margin-top:1rem; margin-bottom:1rem;">
-                            <li><a href="https://modrinth.com/mods?f=categories:fabric&g=categories:server&v=1.21.1"
-                                    target="_blank" style="color:var(--primary);">Modrinth (Recommended)</a></li>
-                            <li><a href="https://www.curseforge.com/minecraft/search?page=1&class=mc-mods&categoryId=&sortBy=relevancy&search=&gameVersion=1.21.1&loader=Fabric"
-                                    target="_blank" style="color:var(--primary);">CurseForge</a></li>
-                        </ul>
-                        <div class="doc-alert">
-                            <strong>Wajib:</strong> Hampir semua mod Fabric membutuhkan <strong>Fabric API</strong>.
-                            Pastikan file <code>fabric-api-xxxx.jar</code> selalu ada di folder mods.
-                        </div>
+            <!-- 1. STRUCTURE & DIRECTORY -->
+            <section id="structure" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 3rem;">Struktur <span class="highlight">Direktori</span>
+                    </h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Pemetaan file sistem server Minecraft Fabric
+                        asli.</p>
+                </div>
+                <table class="tech-grid-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 200px;">Path / File</th>
+                            <th>Fungsi Utama</th>
+                            <th>Aksi Modifikasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/mods</code></td>
+                            <td>Tempat biner mod (jar).</td>
+                            <td>Upload mod server-side di sini. Pastikan versi cocok.</td>
+                        </tr>
+                        <tr>
+                            <td><code>/world/datapacks</code></td>
+                            <td>Modifikasi logika dunia.</td>
+                            <td>Masukan file .zip datapack tanpa butuh restart (gunakan <code>/reload</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>/config</code></td>
+                            <td>Konfigurasi spesifik mod.</td>
+                            <td>Edit file .json/.toml untuk fine-tuning fitur mod.</td>
+                        </tr>
+                        <tr>
+                            <td><code>server.properties</code></td>
+                            <td>Konfigurasi Core Server.</td>
+                            <td>Edit port, online-mode, motd, dan view distance.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- 2. FABRIC MODS HUB (RESTORED & IMPROVED) -->
+            <section id="mods" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 3rem;">Fabric <span class="highlight">Mods Hub</span>
+                    </h2>
+                    <p style="color: var(--text-muted); margin-top: 1rem;">Daftar mod wajib untuk performa dan
+                        fungsionalitas server profesional.</p>
+                </div>
+
+                <div class="features-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+                    <div class="feature-card">
+                        <div class="card-icon"><i data-lucide="download-cloud"></i></div>
+                        <h3>Modrinth</h3>
+                        <p>Platform paling bersih untuk komunitas Fabric modern.</p>
+                        <a href="https://modrinth.com/mods" target="_blank" class="btn-secondary"
+                            style="margin-top: 1rem;">Cari Mods</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon"><i data-lucide="package-search"></i></div>
+                        <h3>CurseForge</h3>
+                        <p>Database klasik dengan ribuan mod dari semua versi.</p>
+                        <a href="https://www.curseforge.com/minecraft/mc-mods" target="_blank" class="btn-secondary"
+                            style="margin-top: 1rem;">Cari Mods</a>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h3>Upload ke Server</h3>
-                        <p>Pindahkan file <code>.jar</code> mod yang sudah didownload ke dalam folder <code>mods</code>
-                            di direktori server Anda.</p>
-                        <div class="code-block">
-                            <div class="code-header">Struktur Folder</div>
-                            <pre><code>server-folder/
-├── mods/
-│   ├── fabric-api-xxxx.jar  <-- WAJIB
-│   ├── lithium-mc1.21.1.jar
-│   └── mod-pilihan-anda.jar
-└── ...</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h3>Restart Server</h3>
-                        <p>Mods baru hanya akan terbaca setelah server direstart (Stop lalu Start kembali). Cek
-                            console/terminal untuk memastikan tidak ada error crash.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Datapacks Section -->
-    <section id="datapacks" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Pasang <span class="highlight">Datapacks</span></h2>
-                <div class="section-line"></div>
-                <p class="section-desc">Menambah fitur custom tanpa harus install mod di sisi client pemain.</p>
-            </div>
-
-            <div class="features-grid" style="grid-template-columns: 1fr;">
-                <div class="feature-card">
-                    <div class="card-icon"><i data-lucide="file-code"></i></div>
-                    <h3>Langkah Pemasangan</h3>
-                    <p>1. Siapkan file datapack (biasanya <code>.zip</code>) atau folder datapacknya.</p>
-                    <p>2. Buka folder world server Anda, lalu masuk ke folder <code>datapacks</code>.</p>
-                    <div class="code-block small" style="margin: 1rem 0;">
-                        <pre><code>server-folder/world/datapacks/</code></pre>
-                    </div>
-                    <p>3. Masukkan file zip datapack ke situ.</p>
-                    <p>4. Jika server sedang menyala, ketik perintah <code>/reload</code> di console atau di game (jika
-                        OP).</p>
-                    <p>5. Cek apakah datapack aktif dengan perintah <code>/datapack list</code>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- World Management -->
-    <section id="world" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ganti <span class="highlight">World / Peta</span></h2>
-                <div class="section-line"></div>
-                <p class="section-desc">Cara menggunakan world custom atau map parkour/adventure pilihan Anda.</p>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">A</div>
-                    <div class="timeline-content">
-                        <h3>Metode Timpa (Replace)</h3>
-                        <p>1. Matikan server.</p>
-                        <p>2. Hapus folder <code>world</code> yang ada di server (atau rename jadi
-                            <code>world_backup</code>).
-                        </p>
-                        <p>3. Copy folder world custom Anda ke folder server.</p>
-                        <p>4. Rename folder tersebut menjadi <code>world</code> agar sesuai dengan setting default.</p>
-                        <p>5. Nyalakan server.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker">B</div>
-                    <div class="timeline-content">
-                        <h3>Metode Config</h3>
-                        <p>Jika Anda tidak ingin mengubah nama folder map Anda:</p>
-                        <p>1. Copy folder map (misal: <code>map_parkour</code>) ke folder server.</p>
-                        <p>2. Edit file <code>server.properties</code>.</p>
-                        <p>3. Cari bagian <code>level-name=world</code> dan ubah menjadi
-                            <code>level-name=map_parkour</code>.
-                        </p>
-                        <p>4. Simpan dan restart server.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Config & Permissions -->
-    <section id="config" class="section bg-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Konfigurasi <span class="highlight">Pemain & Izin</span></h2>
-                <div class="section-line"></div>
-                <p class="section-desc">Mengatur siapa yang bisa masuk dan siapa yang menjadi admin.</p>
-            </div>
-
-            <div class="config-grid">
-                <!-- Cracked / Offline Mode -->
-                <div class="config-card">
-                    <div class="card-header">
-                        <i data-lucide="unlock"></i>
-                        <h3>Izinkan Player Crack</h3>
-                    </div>
-                    <p>Secara default, server hanya mengizinkan akun original (Premium). Untuk mengizinkan user
-                        TLauncher/Crack:</p>
-                    <ol style="margin-top:1rem; padding-left:1.5rem; color:var(--text-muted);">
-                        <li>Matikan server.</li>
-                        <li>Buka file <code>server.properties</code>.</li>
-                        <li>Cari <code>online-mode=true</code>.</li>
-                        <li>Ubah menjadi <code>online-mode=false</code>.</li>
-                        <li>Simpan dan nyalakan server.</li>
-                    </ol>
-                    <div class="doc-alert" style="margin-top:1rem; padding:1rem; font-size:0.85rem;">
-                        <strong>Peringatan:</strong> Skin pemain mungkin tidak muncul, dan keamanan akun sedikit
-                        berkurang.
-                    </div>
-                </div>
-
-                <!-- OP / Admin -->
                 <div class="config-card featured">
-                    <div class="card-header">
-                        <i data-lucide="shield"></i>
-                        <h3>Memberikan Izin OP (Admin)</h3>
+                    <div class="card-header"><i data-lucide="cpu"></i>
+                        <h3>Kategori Modifikasi Server</h3>
                     </div>
-                    <p>Operator (OP) memiliki akses ke semua command seperti /gamemode, /ban, dll.</p>
-                    <div class="code-block" style="margin: 1rem 0;">
-                        <div class="code-header">Ketik di Terminal Server (Tanpa /)</div>
-                        <pre><code>op NamaPlayer</code></pre>
-                        <button class="copy-btn"><i data-lucide="copy"></i></button>
-                    </div>
-                    <p>Untuk mencabut izin OP:</p>
-                    <div class="code-block" style="margin: 1rem 0;">
-                        <pre><code>deop NamaPlayer</code></pre>
-                        <button class="copy-btn"><i data-lucide="copy"></i></button>
-                    </div>
+                    <table class="tech-grid-table">
+                        <thead>
+                            <tr>
+                                <th>Kategori</th>
+                                <th>Contoh Mod</th>
+                                <th>Penjelasan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: var(--primary-glow); font-weight: 700;">Server-Side Only</td>
+                                <td>Lithium, FerriteCore, Ledger</td>
+                                <td>Hanya dipasang di server. Pemain masuk dengan Client Vanilla tanpa error.</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #fb7185; font-weight: 700;">Client-Side Only</td>
+                                <td>Sodium, Iris Shaders, JourneyMap</td>
+                                <td><strong>JANGAN</strong> masukan ke folder server. Hanya untuk PC pribadi.</td>
+                            </tr>
+                            <tr>
+                                <td style="color: #facc15; font-weight: 700;">Synced Mods</td>
+                                <td>Simple Voice Chat, Waystones</td>
+                                <td>Wajib ada di kedua sisi (Server & Client) untuk berfungsi.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </section>
 
-                <!-- Whitelist -->
+            <!-- 3. DATAPACKS (RESTORED) -->
+            <section id="datapacks" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 3rem;">Modular <span class="highlight">Datapacks</span>
+                    </h2>
+                </div>
+                <div class="step-card" style="margin-bottom: 2rem;">
+                    <div class="step-number">i</div>
+                    <p>Datapack memungkinkan kustomisasi dunia yang mendalam (seperti sistem kuburan atau mekanika baru)
+                        tanpa perlu menginstal mod di sisi pemain. Sangat efisien!</p>
+                </div>
+                <table class="tech-grid-table">
+                    <tr>
+                        <th style="width: 200px;">Sumber Utama</th>
+                        <th>Kategori Populer</th>
+                        <th>Aksi</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Vanilla Tweaks</strong></td>
+                        <td>Grave, Fast Leaf Decay, Multi-Sleep, Player Statues.</td>
+                        <td><a href="https://vanillatweaks.net/picker/datapacks/" target="_blank"
+                                style="color: var(--primary);">Buka Picker</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Planet Minecraft</strong></td>
+                        <td>One Block, Skyblock Challenges, Custom Structures.</td>
+                        <td><a href="https://www.planetminecraft.com/data-packs/" target="_blank"
+                                style="color: var(--primary);">Jelajahi Peta</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- 4. WORLD MANAGEMENT (RESTORED) -->
+            <section id="world" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 3rem;">Manajemen <span class="highlight">World &
+                            Backup</span></h2>
+                </div>
                 <div class="config-card">
-                    <div class="card-header">
-                        <i data-lucide="list"></i>
-                        <h3>Whitelist (Mode Privat)</h3>
-                    </div>
-                    <p>Agar hanya orang tertentu yang bisa masuk:</p>
-                    <div class="code-block small">
-                        <div class="code-header">Di Terminal</div>
-                        <pre><code>whitelist on
-whitelist add NamaPlayer</code></pre>
-                    </div>
-                    <p style="margin-top:0.5rem; font-size:0.9rem;">Pastikan <code>white-list=true</code> di
-                        server.properties jika command tidak bekerja.</p>
+                    <table class="tech-grid-table">
+                        <tr>
+                            <td class="prop-name">Migrasi Map</td>
+                            <td>Upload folder world Anda (zip), hapus folder <code>world</code> lama, lalu ekstrak zip
+                                Anda di sana.</td>
+                        </tr>
+                        <tr>
+                            <td class="prop-name">Reset Nether</td>
+                            <td>Matikan server. Hapus folder <code>DIM-1</code> di dalam direktori world Anda.</td>
+                        </tr>
+                        <tr>
+                            <td class="prop-name">Reset The End</td>
+                            <td>Matikan server. Hapus folder <code>DIM1</code> di dalam direktori world Anda.</td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span>FABRIC MODS & CONFIG</span>
-                    <p>Dokumentasi profesional untuk komunitas Minecraft Indonesia.</p>
+            <!-- 5. ADVANCED KERNEL OPTIMIZATION -->
+            <section id="advanced" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 3rem;">
+                    <h2 class="section-title" style="font-size: 3.5rem;">Kernel & <span class="highlight">JVM
+                            Tuning</span></h2>
+                    <p style="color: var(--text-muted); margin-top: 1.5rem; max-width: 900px;">Analisis arsitektur
+                        Aikar's Flags—standar industri untuk menghilangkan lag mikro pada server Minecraft.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="https://fabricmc.net" target="_blank">FabricMC</a>
-                    <a href="https://modrinth.com" target="_blank">Modrinth</a>
-                    <a href="index.html">Kembali ke Cloud</a>
+
+                <div class="config-card featured">
+                    <div class="card-header"><i data-lucide="zap"></i>
+                        <h3>Deep Analysis: Aikar's Flags</h3>
+                    </div>
+                    <table class="tech-grid-table" style="font-size: 0.85rem;">
+                        <thead>
+                            <tr>
+                                <th style="width: 250px;">Flag Parameter</th>
+                                <th>Penjelasan Teknis & Logika Kedalaman</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>-XX:+UseG1GC</code></td>
+                                <td><strong>Garbage First (G1) Collector:</strong> Memecah heap memori menjadi ratusan
+                                    region. G1 menargetkan region dengan objek "sampah" paling banyak terlebih dahulu,
+                                    mengurangi jeda koleksi memori secara signifikan.</td>
+                            </tr>
+                            <tr>
+                                <td><code>-XX:MaxGCPauseMillis=200</code></td>
+                                <td><strong>Target Latensi:</strong> Memaksa JVM menyelesaikan pembersihan memori di
+                                    bawah 200 milidetik. Mengatur ini lebih rendah (misal 50ms) akan beban CPU naik,
+                                    200ms adalah angka emas.</td>
+                            </tr>
+                            <tr>
+                                <td><code>-XX:+AlwaysPreTouch</code></td>
+                                <td><strong>Pre-Alokasi Fisik:</strong> Memaksa Java mengambil seluruh RAM yang diminta
+                                    saat startup. Menghindari sistem operasi melakukan alokasi memori 'on-the-fly' yang
+                                    menyebabkan lag saat pemain masuk.</td>
+                            </tr>
+                            <tr>
+                                <td><code>-XX:+ParallelRefProcEnabled</code></td>
+                                <td><strong>Multi-Core Koleksi:</strong> Mengizinkan pembersihan daftar referensi objek
+                                    menggunakan semua Core CPU secara paralel, sangat membantu jika server punya banyak
+                                    entitas/mobs.</td>
+                            </tr>
+                            <tr>
+                                <td><code>-XX:+PerfDisableSharedMem</code></td>
+                                <td><strong>Eliminasi I/O Wait:</strong> Mencegah Java menulis metrik ke disk yang
+                                    lambat, yang sering memicu lag mendadak (spikes) saat sistem sibuk.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="config-card"
+                    style="margin-top: 2rem; background: rgba(var(--primary-rgb), 0.05); border: 2px solid var(--primary);">
+                    <div class="card-header"><i data-lucide="terminal"></i>
+                        <h3>Ultimate Startup Script</h3>
+                    </div>
+                    <div class="doc-info"
+                        style="background: #000; border: 1px dashed var(--primary); padding: 1.5rem; overflow-x: auto;">
+                        <code
+                            style="word-break: break-all; color: #fff; font-family: 'JetBrains Mono', monospace; line-height: 1.8; font-size: 0.85rem;">
+                            java -Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar fabric-server-launch.jar nogui
+                        </code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. TROUBLESHOOTING (NEW DENSE INFO) -->
+            <section id="troubleshoot" class="content-section">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="font-size: 3rem;">Resolusi <span class="highlight">Masalah</span>
+                    </h2>
+                </div>
+                <table class="tech-grid-table">
+                    <tr>
+                        <th style="width: 250px;">Masalah / Error</th>
+                        <th>Solusi Teknisi</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Server Watchdog: One tick took 60.00s</strong></td>
+                        <td>Server hang terlalu lama. Pasang mod <code>Lithium</code> dan set
+                            <code>max-tick-time=-1</code> di server.properties.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>OutOfMemoryError</strong></td>
+                        <td>RAM tidak mencukupi. Instal mod <code>FerriteCore</code> atau naikkan nilai
+                            <code>-Xmx</code> pada skrip startup.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Can't keep up! Is the server overloaded?</strong></td>
+                        <td>Beban CPU penuh. Kurangi <code>view-distance</code> atau bersihkan entitas yang menumpuk di
+                            world (misal: farm villager berlebih).</td>
+                    </tr>
+                </table>
+            </section>
+
+            <footer class="footer"
+                style="padding: 4rem 0 3rem 0; border-top: 1px solid var(--border); margin-top: 4rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <div class="footer-brand">
+                        <span style="font-weight: 900; font-size: 1.5rem;">FABRIC ULTIMATE</span>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">Nugra21 &copy; 2026
+                            | Technical Optimization Lead</p>
+                    </div>
+                    <div style="display: flex; gap: 2rem; font-size: 0.85rem;">
+                        <a href="index.html" style="color: var(--text-muted);">Home</a>
+                        <a href="documentation.html" style="color: var(--text-muted);">Docs</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Sidebar Navigation -->
+        <aside class="on-this-page" style="width: 280px; padding: 2.5rem 0 2.5rem 2.5rem;">
+            <div class="otp-section">
+                <h4 style="margin-bottom: 1.5rem;">Navigasi Teknis</h4>
+                <div class="otp-list">
+                    <a href="#structure" class="otp-link">Arsitektur Direktori</a>
+                    <a href="#mods" class="otp-link">Fabric Mods Hub</a>
+                    <a href="#datapacks" class="otp-link">Modular Datapacks</a>
+                    <a href="#world" class="otp-link">Manajemen World</a>
+                    <a href="#advanced" class="otp-link">Optimasi Kernel</a>
+                    <a href="#troubleshoot" class="otp-link">Resolusi Masalah</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>Dibuat oleh <strong>Nugra21</strong> &copy; 2026</p>
+            <div class="sidebar-box"
+                style="margin-top: 2rem; border-color: var(--primary); background: rgba(var(--primary-rgb), 0.05);">
+                <h5><i data-lucide="shield-check"></i> Tech Verified</h5>
+                <p>Seluruh parameter di atas telah disinkronisasi untuk Fabric 1.21.1.</p>
             </div>
-        </div>
-    </footer>
+        </aside>
+    </div>
 
     <script src="js/main.js"></script>
     <script>
         lucide.createIcons();
+        const observerOptions = { root: null, rootMargin: '-20% 0px -70% 0px', threshold: 0 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.otp-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) link.classList.add('active');
+                    });
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('section').forEach((section) => { observer.observe(section); });
     </script>
 </body>
 
