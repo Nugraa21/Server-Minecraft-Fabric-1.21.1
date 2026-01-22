@@ -56,15 +56,32 @@
                 <li class="dropdown">
                     <a href="#" class="nav-link dropdown-toggle">Server Status <i data-lucide="chevron-down"
                             style="width:14px;"></i></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
-                            <i data-lucide="cpu" style="color: var(--primary);"></i> Env: GitHub Codespaces
+                    <div class="dropdown-menu status-dropdown">
+                        <div class="status-header">
+                            <span class="status-badge">
+                                <span class="status-dot online"></span> Online
+                            </span>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Stable</span>
                         </div>
-                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
-                            <i data-lucide="activity" style="color: var(--primary);"></i> Fabric 0.15.11
+                        <div class="status-ip-box">
+                            <span class="status-ip-label">Server Address</span>
+                            <div class="status-ip-value">
+                                <code>play.nugra.net</code>
+                                <button class="status-copy-btn" onclick="copyToClipboard('play.nugra.net', this)"
+                                    title="Copy IP">
+                                    <i data-lucide="copy" style="width: 14px;"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="dropdown-item" style="cursor: default; opacity: 1;">
-                            <i data-lucide="zap" style="color: var(--primary);"></i> Status: Stable
+                        <div class="status-info-grid">
+                            <div class="status-info-item">
+                                <span class="status-info-label">Version</span>
+                                <span class="status-info-value">1.21.1</span>
+                            </div>
+                            <div class="status-info-item">
+                                <span class="status-info-label">Platform</span>
+                                <span class="status-info-value">Fabric</span>
+                            </div>
                         </div>
                     </div>
                 </li>
