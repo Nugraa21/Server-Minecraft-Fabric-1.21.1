@@ -1795,3 +1795,52 @@ model-viewer {
     font-weight: 700;
     letter-spacing: 0.05em;
 }
+
+
+/* Character Preview Mode */
+.model-card.no-bg {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.model-card.no-bg:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.model-card.no-bg .model-viewer-container {
+    background: transparent;
+    height: 400px;
+}
+
+.model-card.flex {
+    flex-direction: row;
+    align-items: center;
+    grid-column: 1 / -1;
+}
+
+.model-card.flex.reverse {
+    flex-direction: row-reverse;
+}
+
+.model-card.flex .model-viewer-container {
+    flex: 1;
+}
+
+.model-card.flex .model-info {
+    flex: 1;
+    background: transparent;
+    border-top: none;
+    padding: 0 3rem;
+}
+
+.model-card.flex.reverse .model-info {
+    text-align: right;
+}
+
+.model-card.flex.reverse .model-info h3 {
+    justify-content: flex-end;
+}
+
